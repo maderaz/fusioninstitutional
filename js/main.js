@@ -104,37 +104,31 @@
 
 /* ── Force grayscale on logos ── */
 (function initLogoGray() {
-  var isDark = document.documentElement.classList.contains('dark');
-  function getFilter() {
-    return document.documentElement.classList.contains('dark')
-      ? 'grayscale(100%)'
-      : 'grayscale(100%) brightness(0)';
+  function isDark() {
+    return document.documentElement.classList.contains('dark');
+  }
+  function defaultFilter() {
+    return isDark() ? 'grayscale(100%) opacity(0.6)' : 'invert(1) grayscale(100%) opacity(0.4)';
+  }
+  function hoverFilter() {
+    return isDark() ? 'none' : 'invert(1)';
+  }
+  function applyAll() {
+    document.querySelectorAll('.logo-gray').forEach(function (img) {
+      img.style.filter = defaultFilter();
+    });
   }
   document.querySelectorAll('.logo-gray').forEach(function (img) {
-    img.style.filter = getFilter();
-    img.style.opacity = '0.5';
+    img.style.filter = defaultFilter();
     img.addEventListener('mouseenter', function () {
-      img.style.filter = 'none';
-      img.style.opacity = '1';
+      img.style.filter = hoverFilter();
     });
     img.addEventListener('mouseleave', function () {
-      img.style.filter = getFilter();
-      img.style.opacity = '0.5';
+      img.style.filter = defaultFilter();
     });
   });
-  // Re-apply on theme toggle
   var toggle = document.getElementById('theme-toggle');
-  if (toggle) {
-    toggle.addEventListener('click', function () {
-      setTimeout(function () {
-        document.querySelectorAll('.logo-gray').forEach(function (img) {
-          if (img.style.opacity === '0.5') {
-            img.style.filter = getFilter();
-          }
-        });
-      }, 50);
-    });
-  }
+  if (toggle) toggle.addEventListener('click', function () { setTimeout(applyAll, 50); });
 })();
 
 /* ── Sticky Nav ── */
