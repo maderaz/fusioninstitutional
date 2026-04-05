@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fusioninstitutional.vercel.app/sitemap.xml
