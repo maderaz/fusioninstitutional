@@ -60,6 +60,15 @@ body { font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; 
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
+/* ── Grayscale filter for logos ── */
+.grayscale {
+  filter: grayscale(100%);
+}
+.grayscale:hover,
+.hover\:grayscale-0:hover {
+  filter: grayscale(0%);
+}
+
 /* ── Nav glass effect ── */
 .nav-glass {
   backdrop-filter: blur(12px);
