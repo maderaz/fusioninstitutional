@@ -2,12 +2,12 @@ import { useTheme } from "./ui/theme-context";
 import { cn } from "./ui/utils";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
-import logoTesseract from "figma:asset/fd498d5ef6a552323a756611801a96fe869f9ea1.png";
-import logoTauLabs from "figma:asset/81ccb8b1566153507476e23d831196aa8f65e806.png";
-import logoReservoir from "figma:asset/5825e1e8d3ef806ec41edbf7133c10d197490b21.png";
-import avatarJames from "figma:asset/ca3146c1c32b55a909080989e7aafdcf61056c47.png";
-import avatarVlad from "figma:asset/a328cf41a25f44e21a01ae9247972989a67cc5ee.png";
-import avatarNick from "figma:asset/c002c878caf2b41f608a354bd2e30dd223e5d165.png";
+import logoTesseract from "@/assets/fd498d5ef6a552323a756611801a96fe869f9ea1.png";
+import logoTauLabs from "@/assets/81ccb8b1566153507476e23d831196aa8f65e806.png";
+import logoReservoir from "@/assets/5825e1e8d3ef806ec41edbf7133c10d197490b21.png";
+import avatarJames from "@/assets/ca3146c1c32b55a909080989e7aafdcf61056c47.png";
+import avatarVlad from "@/assets/a328cf41a25f44e21a01ae9247972989a67cc5ee.png";
+import avatarNick from "@/assets/c002c878caf2b41f608a354bd2e30dd223e5d165.png";
 
 interface Testimonial {
   quote: string;

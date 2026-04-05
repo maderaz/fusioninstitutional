@@ -1,5 +1,5 @@
 import svgPaths from "./svg-dcdv391tr6";
-import imgAave1 from "figma:asset/a9073594780db5dacab78106288d3f10d07e1b2d.png";
+import imgAave1 from "@/assets/a9073594780db5dacab78106288d3f10d07e1b2d.png";
 import { imgGroup5419, imgAave, imgGroup5420 } from "./svg-h76mo";
 
 function Rectangle() {

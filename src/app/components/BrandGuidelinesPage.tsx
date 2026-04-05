@@ -3,8 +3,8 @@ import { Link } from "react-router";
 import { ArrowLeft, Copy, Check } from "lucide-react";
 import { useTheme } from "./ui/theme-context";
 import { cn } from "./ui/utils";
-import fusionLogo from "figma:asset/5b737a276a6908088595e5b6530fff074f67123a.png";
-import fusionLogoLight from "figma:asset/467f3a5bb0abc2e066223b5d4eea80797d5b7ccd.png";
+import fusionLogo from "@/assets/5b737a276a6908088595e5b6530fff074f67123a.png";
+import fusionLogoLight from "@/assets/467f3a5bb0abc2e066223b5d4eea80797d5b7ccd.png";
 
 /* ─── helpers ─── */
 function CopyHex({ hex }: { hex: string }) {

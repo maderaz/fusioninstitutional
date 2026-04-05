@@ -1,7 +1,7 @@
 import FusionFlow from "./ui/fusion-flow";
 import { useTheme } from "./ui/theme-context";
 import { cn } from "./ui/utils";
-import iconFusion from "figma:asset/e350fb54d0e73d25185031ab80ff2e8c71682776.png";
+import iconFusion from "@/assets/e350fb54d0e73d25185031ab80ff2e8c71682776.png";
 
 const steps = [
   {

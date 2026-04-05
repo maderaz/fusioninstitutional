@@ -5,15 +5,15 @@ import { ChevronRight, ArrowUpRight } from "lucide-react";
 import { useTheme } from "./ui/theme-context";
 import { cn } from "./ui/utils";
 
-import logoLlamaRisk from "figma:asset/27eaf7f1d8e15adbda2e40a7dbbaa37a9148005c.png";
-import logoTesseract from "figma:asset/fd498d5ef6a552323a756611801a96fe869f9ea1.png";
-import logoTauLabs from "figma:asset/81ccb8b1566153507476e23d831196aa8f65e806.png";
-import logoK3Capital from "figma:asset/2034cdb69d7661904524abe1ebf8c3dfff4baa40.png";
-import logoNavigator from "figma:asset/930a5b1472d3933af2c64ea76a3a4497aeae82a0.png";
-import logoFirst from "figma:asset/b43b4e3d049276b94a1eab36badf095c0f199d5f.png";
-import logoThird from "figma:asset/5825e1e8d3ef806ec41edbf7133c10d197490b21.png";
-import imgUsdc from "figma:asset/2b48695444595169b19e5f1a3e0e29241ec3cfdc.png";
-import imgAppMock from "figma:asset/a50d27a876e4244095fecbf9b41197e2b5cb274f.png";
+import logoLlamaRisk from "@/assets/27eaf7f1d8e15adbda2e40a7dbbaa37a9148005c.png";
+import logoTesseract from "@/assets/fd498d5ef6a552323a756611801a96fe869f9ea1.png";
+import logoTauLabs from "@/assets/81ccb8b1566153507476e23d831196aa8f65e806.png";
+import logoK3Capital from "@/assets/2034cdb69d7661904524abe1ebf8c3dfff4baa40.png";
+import logoNavigator from "@/assets/930a5b1472d3933af2c64ea76a3a4497aeae82a0.png";
+import logoFirst from "@/assets/b43b4e3d049276b94a1eab36badf095c0f199d5f.png";
+import logoThird from "@/assets/5825e1e8d3ef806ec41edbf7133c10d197490b21.png";
+import imgUsdc from "@/assets/2b48695444595169b19e5f1a3e0e29241ec3cfdc.png";
+import imgAppMock from "@/assets/a50d27a876e4244095fecbf9b41197e2b5cb274f.png";
 
 const transitionVariants = {
   item: {

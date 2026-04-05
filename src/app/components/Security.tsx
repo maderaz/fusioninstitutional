@@ -2,9 +2,9 @@ import { ExternalLink } from "lucide-react";
 import { useTheme } from "./ui/theme-context";
 import { cn } from "./ui/utils";
 
-import logoBlocksec from "figma:asset/fcb629b2417a54cc4378fef5fba8d657b6bc2fea.png";
-import logoAckee from "figma:asset/197135718ab7bba66535b2f9b1c097882c33a8ae.png";
-import logoProtofire from "figma:asset/7818a7d6ab1078dc24277a513e078db13a765fae.png";
+import logoBlocksec from "@/assets/fcb629b2417a54cc4378fef5fba8d657b6bc2fea.png";
+import logoAckee from "@/assets/197135718ab7bba66535b2f9b1c097882c33a8ae.png";
+import logoProtofire from "@/assets/7818a7d6ab1078dc24277a513e078db13a765fae.png";
 
 const stats = [
   { value: "10+", label: "Independent security audits" },

@@ -1,11 +1,11 @@
 import svgPaths from "./svg-6lq9roozpt";
-import imgGeneralBg01 from "figma:asset/36a9570a0686de5a2b47028f3a36fbdabc2ad3dd.png";
-import imgUsdc from "figma:asset/ac20e2f4201491730bb781b7a17e2986a441f5c4.png";
-import imgScreenshot20251217At161707 from "figma:asset/6a1c323810bdf0b78497049d09196d7b3d86cad2.png";
-import imgScreenshot20251217At162557Copy from "figma:asset/90b83974d2123539b809133e1b82cc97423f08bf.png";
-import imgIporDaoLogoV2 from "figma:asset/94e828befbd9536f38323a42f629bc4b54892652.png";
-import imgAave1 from "figma:asset/a9073594780db5dacab78106288d3f10d07e1b2d.png";
-import imgFusionFullLogoWhiteText from "figma:asset/893bb5d85d5234af690fb6cad16f261d83a94015.png";
+import imgGeneralBg01 from "@/assets/36a9570a0686de5a2b47028f3a36fbdabc2ad3dd.png";
+import imgUsdc from "@/assets/ac20e2f4201491730bb781b7a17e2986a441f5c4.png";
+import imgScreenshot20251217At161707 from "@/assets/6a1c323810bdf0b78497049d09196d7b3d86cad2.png";
+import imgScreenshot20251217At162557Copy from "@/assets/90b83974d2123539b809133e1b82cc97423f08bf.png";
+import imgIporDaoLogoV2 from "@/assets/94e828befbd9536f38323a42f629bc4b54892652.png";
+import imgAave1 from "@/assets/a9073594780db5dacab78106288d3f10d07e1b2d.png";
+import imgFusionFullLogoWhiteText from "@/assets/893bb5d85d5234af690fb6cad16f261d83a94015.png";
 import { imgGroup5741, imgGroup5744, imgGroup5038, imgGroup5039, imgGroup5036, imgGroup4906, imgGroup5419, imgAave, imgGroup5420, imgGroup5040, imgGroup5041, imgGroup5037, imgGroup5042, imgGroup5043, imgGroup5044 } from "./svg-fvr9h";
 
 function Group52() {

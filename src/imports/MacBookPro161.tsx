@@ -1,6 +1,6 @@
 import svgPaths from "./svg-o5uqkqhdf8";
-import imgLinkHomeFusionByIpor from "figma:asset/875783ec6a6588aa50507cbb8566847105660d57.png";
-import imgImage1 from "figma:asset/ab9681ec09a7121b938468eda49254122e69bc66.png";
+import imgLinkHomeFusionByIpor from "@/assets/875783ec6a6588aa50507cbb8566847105660d57.png";
+import imgImage1 from "@/assets/ab9681ec09a7121b938468eda49254122e69bc66.png";
 
 function LinkHomeFusionByIpor() {
   return (

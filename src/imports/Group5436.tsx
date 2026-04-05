@@ -1,7 +1,7 @@
 import svgPaths from "./svg-nh53ytc8f9";
-import imgRUsd from "figma:asset/217d753a6bf6a8f363cec0dad6ca077aee09e994.png";
-import imgUsdc from "figma:asset/2b48695444595169b19e5f1a3e0e29241ec3cfdc.png";
-import imgDebank from "figma:asset/f022d0ef5144ebbd957aa196d5bb1998e33dda26.png";
+import imgRUsd from "@/assets/217d753a6bf6a8f363cec0dad6ca077aee09e994.png";
+import imgUsdc from "@/assets/2b48695444595169b19e5f1a3e0e29241ec3cfdc.png";
+import imgDebank from "@/assets/f022d0ef5144ebbd957aa196d5bb1998e33dda26.png";
 import { imgGroup5038, imgGroup5039, imgGroup5036, imgGroup, imgGroup1, imgGroup5040, imgGroup5041, imgGroup5037 } from "./svg-lmgob";
 
 function ItemLink() {

@@ -4,9 +4,9 @@ import HomeNav from "./HomeNav";
 import { ThemeContext } from "./ui/theme-context";
 import { cn } from "./ui/utils";
 
-import fusionLogo from "figma:asset/875783ec6a6588aa50507cbb8566847105660d57.png";
-import fusionLogoDark from "figma:asset/7431d75d5eb1f7dad9a8e4c69ac6b39fb194e6f1.png";
-import appScreenshot from "figma:asset/c8d9516a02d0e676a0d9f0a135b9010320d8fb30.png";
+import fusionLogo from "@/assets/875783ec6a6588aa50507cbb8566847105660d57.png";
+import fusionLogoDark from "@/assets/7431d75d5eb1f7dad9a8e4c69ac6b39fb194e6f1.png";
+import appScreenshot from "@/assets/c8d9516a02d0e676a0d9f0a135b9010320d8fb30.png";
 
 function ArrowIcon() {
   return (

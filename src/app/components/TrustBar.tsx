@@ -2,12 +2,12 @@ import { useTheme } from "./ui/theme-context";
 import { cn } from "./ui/utils";
 import { ArrowUpRight } from "lucide-react";
 
-import logoAave from "figma:asset/f2fc5301bfcaff717b0aee084068e1db50944de6.png";
-import logoMorpho from "figma:asset/5abd3a0d07e4eb4ace015cd76f2b7f7357384721.png";
-import logoUniswap from "figma:asset/347e59f899e9dc45af6f2abaae6ce391c90035bb.png";
-import logoCompound from "figma:asset/cda8f2f7ff473512091beef88e2e41c652f763df.png";
-import logoPendle from "figma:asset/d71d24730cbfa537a4357336d19da1db84099ba1.png";
-import logoExtra from "figma:asset/6f16f1ad63b9e471be03efda4ed95dd7cf5b24f4.png";
+import logoAave from "@/assets/f2fc5301bfcaff717b0aee084068e1db50944de6.png";
+import logoMorpho from "@/assets/5abd3a0d07e4eb4ace015cd76f2b7f7357384721.png";
+import logoUniswap from "@/assets/347e59f899e9dc45af6f2abaae6ce391c90035bb.png";
+import logoCompound from "@/assets/cda8f2f7ff473512091beef88e2e41c652f763df.png";
+import logoPendle from "@/assets/d71d24730cbfa537a4357336d19da1db84099ba1.png";
+import logoExtra from "@/assets/6f16f1ad63b9e471be03efda4ed95dd7cf5b24f4.png";
 
 const topRow = [
   { name: "Aave V3", logo: logoAave, scale: 0.8 },

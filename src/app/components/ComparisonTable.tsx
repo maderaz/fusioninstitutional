@@ -13,8 +13,8 @@ import {
 } from "./ui/fusion-icons";
 import { useTheme } from "./ui/theme-context";
 import { cn } from "./ui/utils";
-import fusionLogoDarkPng from "figma:asset/7431d75d5eb1f7dad9a8e4c69ac6b39fb194e6f1.png";
-import fusionLogoLight from "figma:asset/467f3a5bb0abc2e066223b5d4eea80797d5b7ccd.png";
+import fusionLogoDarkPng from "@/assets/7431d75d5eb1f7dad9a8e4c69ac6b39fb194e6f1.png";
+import fusionLogoLight from "@/assets/467f3a5bb0abc2e066223b5d4eea80797d5b7ccd.png";
 
 const rows: {
   feature: string;

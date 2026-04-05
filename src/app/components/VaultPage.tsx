@@ -4,9 +4,9 @@ import { ArrowLeft, Check, ChevronDown, ChevronRight, Copy, ExternalLink, Info, 
 import { Area, Bar, BarChart, CartesianGrid, ComposedChart, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { useTheme } from "./ui/theme-context";
 import { cn } from "./ui/utils";
-import fusionLogo from "figma:asset/5b737a276a6908088595e5b6530fff074f67123a.png";
-import fusionLogoLight from "figma:asset/467f3a5bb0abc2e066223b5d4eea80797d5b7ccd.png";
-import imgUsdc from "figma:asset/2b48695444595169b19e5f1a3e0e29241ec3cfdc.png";
+import fusionLogo from "@/assets/5b737a276a6908088595e5b6530fff074f67123a.png";
+import fusionLogoLight from "@/assets/467f3a5bb0abc2e066223b5d4eea80797d5b7ccd.png";
+import imgUsdc from "@/assets/2b48695444595169b19e5f1a3e0e29241ec3cfdc.png";
 
 /* ─── Font helpers ─── */
 const NUM_FONT = "'Source Sans Pro', sans-serif";

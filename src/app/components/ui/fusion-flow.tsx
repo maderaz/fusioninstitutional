@@ -3,14 +3,14 @@ import { motion } from "motion/react";
 import { cn } from "./utils";
 import { useTheme } from "./theme-context";
 
-import iconPendle from "figma:asset/31a31f4afd53e870520818624bd81035c1b581c3.png";
-import iconAave from "figma:asset/4f300b59a8c93ba11b8d9147b36d7d2721cf7676.png";
-import iconEuler from "figma:asset/907d2affec3bc22e657c42e3b02c7e2be5697a05.png";
-import iconMorphoDark from "figma:asset/a887d9da2d23aa089f30d7595069a61e8f58c159.png";
-import iconMorphoLight from "figma:asset/de08afe022365333d838bf2246d10c9d83189fa4.png";
-import imgUsdc from "figma:asset/2b48695444595169b19e5f1a3e0e29241ec3cfdc.png";
-import iconFusion from "figma:asset/e350fb54d0e73d25185031ab80ff2e8c71682776.png";
-import iconFusionLight from "figma:asset/b069a3fd88f019705814056dac00fe24cd91fa59.png";
+import iconPendle from "@/assets/31a31f4afd53e870520818624bd81035c1b581c3.png";
+import iconAave from "@/assets/4f300b59a8c93ba11b8d9147b36d7d2721cf7676.png";
+import iconEuler from "@/assets/907d2affec3bc22e657c42e3b02c7e2be5697a05.png";
+import iconMorphoDark from "@/assets/a887d9da2d23aa089f30d7595069a61e8f58c159.png";
+import iconMorphoLight from "@/assets/de08afe022365333d838bf2246d10c9d83189fa4.png";
+import imgUsdc from "@/assets/2b48695444595169b19e5f1a3e0e29241ec3cfdc.png";
+import iconFusion from "@/assets/e350fb54d0e73d25185031ab80ff2e8c71682776.png";
+import iconFusionLight from "@/assets/b069a3fd88f019705814056dac00fe24cd91fa59.png";
 
 const FUSES = ["Morpho", "Aave", "Euler"];
 const ACTIONS = ["Swap", "Loop", "Harvest", "Flashloan"];

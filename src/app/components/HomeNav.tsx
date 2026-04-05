@@ -1,4 +1,4 @@
-import fusionLogoLight from "figma:asset/467f3a5bb0abc2e066223b5d4eea80797d5b7ccd.png";
+import fusionLogoLight from "@/assets/467f3a5bb0abc2e066223b5d4eea80797d5b7ccd.png";
 
 import React from "react";
 import { Link } from "react-router";
