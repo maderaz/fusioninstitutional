@@ -102,6 +102,22 @@
   els.forEach(function (el) { observer.observe(el); });
 })();
 
+/* ── Force grayscale on logos ── */
+(function initLogoGray() {
+  document.querySelectorAll('.logo-gray').forEach(function (img) {
+    img.style.filter = 'grayscale(100%)';
+    img.style.opacity = '0.5';
+    img.addEventListener('mouseenter', function () {
+      img.style.filter = 'grayscale(0%)';
+      img.style.opacity = '1';
+    });
+    img.addEventListener('mouseleave', function () {
+      img.style.filter = 'grayscale(100%)';
+      img.style.opacity = '0.5';
+    });
+  });
+})();
+
 /* ── Sticky Nav ── */
 (function initStickyNav() {
   var nav = document.getElementById('main-nav');
