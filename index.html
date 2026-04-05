@@ -498,67 +498,66 @@
   <!-- SECURITY -->
   <section id="security" class="py-16 md:py-24 px-6 bg-white dark:bg-[#0D1117]">
     <div class="max-w-6xl mx-auto">
-      <div class="mb-12 reveal">
-        <span class="text-xs font-semibold uppercase tracking-widest text-[#8429FF] mb-4 block">Security</span>
-        <h2 class="text-2xl md:text-4xl font-semibold mb-4">Transparent &amp;<br>battle-tested<br><span class="gradient-text italic">vault</span> infrastructure.</h2>
-        <p class="text-[#70747A] dark:text-[#9BA3AF] max-w-xl">Immutable vault logic. Non-upgradable fuses. Role-based access control. Fusion is built by engineers from banking, payments, and insurance, and audited by the best in Web3.</p>
+      <!-- Top: heading left, code block right -->
+      <div class="grid md:grid-cols-2 gap-12 items-start mb-16 reveal">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-widest text-[#8429FF] mb-4 block">Security</span>
+          <h2 class="text-2xl md:text-4xl font-semibold mb-4">Transparent &amp;<br>battle-tested<br><span class="gradient-text italic">vault</span> infrastructure.</h2>
+          <p class="text-[#70747A] dark:text-[#9BA3AF]">Immutable vault logic. Non-upgradable fuses. Role-based access control. Fusion is built by engineers from banking, payments, and insurance, and audited by the best in Web3.</p>
+        </div>
+        <div class="rounded-xl border border-[#E5E5E5] dark:border-[#2E3137] overflow-hidden">
+          <div class="flex items-center justify-between px-5 py-3 bg-[#F5F5FA] dark:bg-[#161A20] border-b border-[#E5E5E5] dark:border-[#2E3137]">
+            <div class="flex items-center gap-3">
+              <div class="flex gap-1.5">
+                <div class="h-2.5 w-2.5 rounded-full bg-[#ccc] dark:bg-[#555]"></div>
+                <div class="h-2.5 w-2.5 rounded-full bg-[#ddd] dark:bg-[#444]"></div>
+                <div class="h-2.5 w-2.5 rounded-full bg-[#eee] dark:bg-[#333]"></div>
+              </div>
+              <span class="text-xs font-medium text-[#70747A] dark:text-[#9BA3AF]">FusionFactory.sol</span>
+            </div>
+            <a href="https://github.com/IPOR-Labs/ipor-fusion/blob/main/contracts/factory/FusionFactory.sol" target="_blank" rel="noopener" class="text-xs text-[#70747A] dark:text-[#9BA3AF] hover:text-[#8429FF] flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg> View on GitHub</a>
+          </div>
+          <div class="p-5 bg-white dark:bg-[#0D1117] font-mono text-[11px] leading-relaxed overflow-x-auto">
+            <table class="border-collapse"><tbody>
+              <tr><td class="pr-4 text-right text-[#ccc] dark:text-[#555] select-none">1</td><td><span class="text-[#6A737D]">// SPDX-License-Identifier: BUSL-1.1</span></td></tr>
+              <tr><td class="pr-4 text-right text-[#ccc] dark:text-[#555] select-none">2</td><td><span class="text-[#D73A49] dark:text-[#F97583]">pragma</span> solidity 0.8.30;</td></tr>
+              <tr><td class="pr-4 text-right text-[#ccc] dark:text-[#555] select-none">3</td><td></td></tr>
+              <tr><td class="pr-4 text-right text-[#ccc] dark:text-[#555] select-none">4</td><td><span class="text-[#D73A49] dark:text-[#F97583]">import</span> {<span class="text-[#6F42C1] dark:text-[#B392F0]">UUPSUpgradeable</span>} <span class="text-[#D73A49] dark:text-[#F97583]">from</span> <span class="text-[#032F62] dark:text-[#9ECBFF]">"@openzeppelin/contracts-upgradeable..."</span>;</td></tr>
+              <tr><td class="pr-4 text-right text-[#ccc] dark:text-[#555] select-none">5</td><td><span class="text-[#D73A49] dark:text-[#F97583]">import</span> {<span class="text-[#6F42C1] dark:text-[#B392F0]">FusionFactoryStorageLib</span>} <span class="text-[#D73A49] dark:text-[#F97583]">from</span> <span class="text-[#032F62] dark:text-[#9ECBFF]">"./lib/FusionFactoryStorage..."</span>;</td></tr>
+              <tr><td class="pr-4 text-right text-[#ccc] dark:text-[#555] select-none">6</td><td></td></tr>
+              <tr><td class="pr-4 text-right text-[#ccc] dark:text-[#555] select-none">7</td><td><span class="text-[#D73A49] dark:text-[#F97583]">import</span> {<span class="text-[#6F42C1] dark:text-[#B392F0]">FusionFactoryLogicLib</span>} <span class="text-[#D73A49] dark:text-[#F97583]">from</span> <span class="text-[#032F62] dark:text-[#9ECBFF]">"./lib/FusionFactoryLogic..."</span>;</td></tr>
+              <tr><td class="pr-4 text-right text-[#ccc] dark:text-[#555] select-none">8</td><td><span class="text-[#D73A49] dark:text-[#F97583]">import</span> {<span class="text-[#6F42C1] dark:text-[#B392F0]">FusionFactoryLib</span>} <span class="text-[#D73A49] dark:text-[#F97583]">from</span> <span class="text-[#032F62] dark:text-[#9ECBFF]">"./lib/FusionFactoryLib.sol"</span>;</td></tr>
+              <tr><td class="pr-4 text-right text-[#ccc] dark:text-[#555] select-none">9</td><td></td></tr>
+              <tr><td class="pr-4 text-right text-[#ccc] dark:text-[#555] select-none">10</td><td><span class="text-[#D73A49] dark:text-[#F97583]">import</span> {<span class="text-[#6F42C1] dark:text-[#B392F0]">FusionFactoryAccessControl</span>} <span class="text-[#D73A49] dark:text-[#F97583]">from</span> <span class="text-[#032F62] dark:text-[#9ECBFF]">"./FusionFactoryAccess..."</span>;</td></tr>
+              <tr><td class="pr-4 text-right text-[#ccc] dark:text-[#555] select-none">11</td><td></td></tr>
+            </tbody></table>
+          </div>
+        </div>
       </div>
 
       <!-- Stats -->
-      <div class="grid grid-cols-3 gap-6 mb-12 reveal">
-        <div class="text-center p-6 rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137]">
-          <div class="text-3xl md:text-4xl font-bold text-[#8429FF] font-source">10+</div>
-          <div class="text-sm text-[#70747A] dark:text-[#9BA3AF] mt-2">Independent security audits</div>
+      <div class="grid grid-cols-3 divide-x divide-[#E5E5E5] dark:divide-[#2E3137] border border-[#E5E5E5] dark:border-[#2E3137] rounded-2xl mb-12 reveal">
+        <div class="text-center py-8 px-4">
+          <div class="text-3xl md:text-4xl font-bold font-source mb-1">10+</div>
+          <div class="text-sm text-[#70747A] dark:text-[#9BA3AF]">Independent security audits</div>
         </div>
-        <div class="text-center p-6 rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137]">
-          <div class="text-3xl md:text-4xl font-bold text-[#8429FF] font-source">100%</div>
-          <div class="text-sm text-[#70747A] dark:text-[#9BA3AF] mt-2">Immutable vault &amp; fuse contracts</div>
+        <div class="text-center py-8 px-4">
+          <div class="text-3xl md:text-4xl font-bold font-source mb-1">100%</div>
+          <div class="text-sm text-[#70747A] dark:text-[#9BA3AF]">Immutable vault &amp; fuse contracts</div>
         </div>
-        <div class="text-center p-6 rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137]">
-          <div class="text-3xl md:text-4xl font-bold text-[#8429FF] font-source">0</div>
-          <div class="text-sm text-[#70747A] dark:text-[#9BA3AF] mt-2">Admin keys over depositor funds</div>
-        </div>
-      </div>
-
-      <!-- Code block -->
-      <div class="rounded-xl border border-[#E5E5E5] dark:border-[#2E3137] overflow-hidden mb-12 reveal">
-        <div class="flex items-center justify-between px-5 py-3 bg-[#8429FF]/5 border-b border-[#E5E5E5] dark:border-[#2E3137]">
-          <div class="flex items-center gap-3">
-            <div class="flex gap-1.5">
-              <div class="h-3 w-3 rounded-full bg-[#8429FF]/20"></div>
-              <div class="h-3 w-3 rounded-full bg-[#8429FF]/12"></div>
-              <div class="h-3 w-3 rounded-full bg-[#8429FF]/6"></div>
-            </div>
-            <span class="text-xs font-medium text-[#8429FF]">FusionFactory.sol</span>
-          </div>
-          <a href="https://github.com/IPOR-Labs/ipor-fusion/blob/main/contracts/factory/FusionFactory.sol" target="_blank" rel="noopener" class="text-xs text-[#8429FF] hover:underline">View on GitHub →</a>
-        </div>
-        <div class="p-6 bg-white dark:bg-[#0D1117] font-mono text-xs leading-relaxed overflow-x-auto">
-          <pre class="text-[#70747A] dark:text-[#9BA3AF]"><span class="text-[#6A737D]">// SPDX-License-Identifier: BUSL-1.1</span>
-<span class="text-[#D73A49] dark:text-[#F97583]">pragma</span> solidity 0.8.26;
-
-<span class="text-[#D73A49] dark:text-[#F97583]">import</span> {<span class="text-[#6F42C1] dark:text-[#B392F0]">UUPSUpgradeable</span>} <span class="text-[#D73A49] dark:text-[#F97583]">from</span> <span class="text-[#032F62] dark:text-[#9ECBFF]">"@openzeppelin/..."</span>;
-
-<span class="text-[#D73A49] dark:text-[#F97583]">contract</span> <span class="text-[#6F42C1] dark:text-[#B392F0]">FusionFactory</span> <span class="text-[#D73A49] dark:text-[#F97583]">is</span> <span class="text-[#6F42C1] dark:text-[#B392F0]">UUPSUpgradeable</span>, <span class="text-[#6F42C1] dark:text-[#B392F0]">FusionFactoryAccessControl</span> {
-    <span class="text-[#D73A49] dark:text-[#F97583]">event</span> <span class="text-[#6F42C1] dark:text-[#B392F0]">PlasmaVaultCreated</span>(
-        <span class="text-[#6F42C1] dark:text-[#B392F0]">address</span> plasmaVault,
-        <span class="text-[#6F42C1] dark:text-[#B392F0]">address</span> accessManager
-    );
-    <span class="text-[#D73A49] dark:text-[#F97583]">event</span> <span class="text-[#6F42C1] dark:text-[#B392F0]">FusionVaultCreated</span>(
-        <span class="text-[#6F42C1] dark:text-[#B392F0]">address</span> fusionVault,
-        <span class="text-[#6F42C1] dark:text-[#B392F0]">address</span> accessManager
-    );
-}</pre>
+        <div class="text-center py-8 px-4">
+          <div class="text-3xl md:text-4xl font-bold font-source mb-1">0</div>
+          <div class="text-sm text-[#70747A] dark:text-[#9BA3AF]">Admin keys over depositor funds</div>
         </div>
       </div>
 
       <!-- Auditors -->
       <div class="text-center reveal">
-        <p class="text-xs text-[#70747A] dark:text-[#9BA3AF] uppercase tracking-widest mb-6">Audited &amp; security reviewed by</p>
-        <div class="flex items-center justify-center gap-8 md:gap-16">
-          <img src="images/logo-blocksec.png" alt="BlockSec" class="h-8 logo-gray" loading="lazy">
-          <img src="images/logo-ackee.png" alt="Ackee Blockchain" class="h-8 logo-gray" loading="lazy">
-          <img src="images/logo-protofire.png" alt="Protofire" class="h-8 logo-gray" loading="lazy">
+        <p class="text-xs text-[#70747A] dark:text-[#9BA3AF] mb-6">Audited &amp; security reviewed by</p>
+        <div class="flex items-center justify-center gap-10">
+          <img src="images/logo-blocksec.png" alt="BlockSec" class="h-6 logo-gray" loading="lazy">
+          <img src="images/logo-ackee.png" alt="Ackee Blockchain" class="h-6 logo-gray" loading="lazy">
+          <img src="images/logo-protofire.png" alt="Protofire" class="h-6 logo-gray" loading="lazy">
         </div>
       </div>
     </div>
