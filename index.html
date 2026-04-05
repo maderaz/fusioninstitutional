@@ -76,65 +76,51 @@
   <main>
 
   <!-- HERO -->
-  <section class="pt-28 pb-16 md:pt-36 md:pb-24 px-6">
+  <section class="pt-32 pb-20 md:pt-40 md:pb-28 px-6">
     <div class="max-w-7xl mx-auto">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <!-- Left: Text -->
-        <div>
-          <h1 class="text-3xl md:text-5xl lg:text-[56px] font-semibold leading-[1.1] mb-6 reveal">
-            Vault infrastructure for <span class="gradient-text">institutional-grade</span> yield.
-          </h1>
-          <p class="text-base md:text-lg text-[#70747A] dark:text-[#9BA3AF] max-w-lg mb-8 reveal reveal-delay-1">
-            Deploy and manage onchain vault strategies or earn through professionally curated vaults. Modular infrastructure across Aave, Morpho, SparkLend, Euler, and more.
-          </p>
-          <div class="flex flex-col sm:flex-row items-start gap-4 mb-10 reveal reveal-delay-2">
-            <a href="https://app.ipor.io/fusion" target="_blank" rel="noopener" class="btn-primary text-sm px-7 py-3">Launch App</a>
-            <a href="https://docs.ipor.io/build-on-fusion/developer-guide/quick-start-guide" target="_blank" rel="noopener" class="btn-outline text-sm px-7 py-3">Start Building</a>
-          </div>
-          <!-- Stats -->
-          <div class="flex items-center gap-8 reveal reveal-delay-3">
-            <div>
-              <div class="text-2xl md:text-3xl font-bold font-source">$250M</div>
-              <div class="text-xs text-[#70747A] dark:text-[#9BA3AF] mt-1">TVM</div>
-            </div>
-            <div class="w-px h-10 bg-[#E5E5E5] dark:bg-[#2E3137]"></div>
-            <div>
-              <div class="text-2xl md:text-3xl font-bold font-source">$2.6B</div>
-              <div class="text-xs text-[#70747A] dark:text-[#9BA3AF] mt-1">Vol. LTD</div>
-            </div>
-            <div class="w-px h-10 bg-[#E5E5E5] dark:bg-[#2E3137]"></div>
-            <div>
-              <div class="text-2xl md:text-3xl font-bold font-source">103</div>
-              <div class="text-xs text-[#70747A] dark:text-[#9BA3AF] mt-1">Vaults</div>
-            </div>
-          </div>
+      <!-- Heading - full width, large -->
+      <h1 class="text-4xl md:text-6xl lg:text-[80px] font-semibold leading-[1.08] mb-8 reveal">
+        Vault infrastructure for<br><span class="gradient-text">institutional-grade</span> yield.
+      </h1>
+
+      <!-- Description -->
+      <p class="text-base md:text-lg text-[#70747A] dark:text-[#9BA3AF] max-w-2xl mb-10 reveal reveal-delay-1">
+        Deploy and manage onchain vault strategies or earn through professionally curated vaults. Modular infrastructure across Aave, Morpho, SparkLend, Euler, and more.
+      </p>
+
+      <!-- Buttons + Stats on same row -->
+      <div class="flex flex-col md:flex-row md:items-center gap-6 md:gap-10 mb-16 reveal reveal-delay-2">
+        <div class="flex items-center gap-4">
+          <a href="https://app.ipor.io/fusion" target="_blank" rel="noopener" class="btn-primary text-sm px-7 py-3.5 inline-flex items-center gap-2">Launch App <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+          <a href="https://docs.ipor.io/build-on-fusion/developer-guide/quick-start-guide" target="_blank" rel="noopener" class="btn-outline text-sm px-7 py-3.5">Start Building</a>
         </div>
-        <!-- Right: App Mock -->
-        <div class="reveal reveal-delay-2">
-          <img src="images/app-mock.png" alt="Fusion App Dashboard" class="w-full rounded-2xl shadow-2xl" loading="lazy">
+        <div class="flex items-center gap-8">
+          <div class="border-l border-[#E5E5E5] dark:border-[#2E3137] pl-8 hidden md:block">
+            <div class="text-xs text-[#70747A] dark:text-[#9BA3AF]">TVM</div>
+            <div class="text-xl font-bold font-source">$222.4M</div>
+          </div>
+          <div class="border-l border-[#E5E5E5] dark:border-[#2E3137] pl-8">
+            <div class="text-xs text-[#70747A] dark:text-[#9BA3AF]">Vaults</div>
+            <div class="text-xl font-bold font-source">76</div>
+          </div>
+          <div class="border-l border-[#E5E5E5] dark:border-[#2E3137] pl-8">
+            <div class="text-xs text-[#70747A] dark:text-[#9BA3AF]">Volume processed</div>
+            <div class="text-xl font-bold font-source">$10B+</div>
+          </div>
         </div>
       </div>
 
-      <!-- Trusted By logos -->
-      <div class="mt-20 reveal">
-        <p class="text-xs text-[#70747A] dark:text-[#9BA3AF] uppercase tracking-widest mb-6 text-center">Trusted by</p>
-        <div class="overflow-hidden">
-          <div class="flex items-center gap-12 animate-marquee whitespace-nowrap">
-            <img src="images/logo-tesseract.png" alt="Tesseract" class="h-6 opacity-60 hover:opacity-100 transition-opacity">
-            <img src="images/logo-first.png" alt="First" class="h-6 opacity-60 hover:opacity-100 transition-opacity">
-            <img src="images/logo-third.png" alt="Reservoir" class="h-6 opacity-60 hover:opacity-100 transition-opacity">
-            <img src="images/logo-taulabs.png" alt="TAU Labs" class="h-6 opacity-60 hover:opacity-100 transition-opacity">
-            <img src="images/logo-k3capital.png" alt="K3 Capital" class="h-6 opacity-60 hover:opacity-100 transition-opacity">
-            <img src="images/logo-navigator.png" alt="Navigator" class="h-6 opacity-60 hover:opacity-100 transition-opacity">
-            <img src="images/logo-llamarisk.png" alt="Llama Risk" class="h-6 opacity-60 hover:opacity-100 transition-opacity">
-            <img src="images/logo-tesseract.png" alt="Tesseract" class="h-6 opacity-60">
-            <img src="images/logo-first.png" alt="First" class="h-6 opacity-60">
-            <img src="images/logo-third.png" alt="Reservoir" class="h-6 opacity-60">
-            <img src="images/logo-taulabs.png" alt="TAU Labs" class="h-6 opacity-60">
-            <img src="images/logo-k3capital.png" alt="K3 Capital" class="h-6 opacity-60">
-            <img src="images/logo-navigator.png" alt="Navigator" class="h-6 opacity-60">
-            <img src="images/logo-llamarisk.png" alt="Llama Risk" class="h-6 opacity-60">
-          </div>
+      <!-- Trusted By - static row -->
+      <div class="reveal reveal-delay-3">
+        <p class="text-xs text-[#70747A] dark:text-[#9BA3AF] mb-5">Trusted by</p>
+        <div class="flex flex-wrap items-center gap-8 md:gap-12">
+          <img src="images/logo-tesseract.png" alt="Tesseract" class="h-6 opacity-50 hover:opacity-100 transition-opacity" loading="lazy">
+          <img src="images/logo-first.png" alt="Clearstar" class="h-6 opacity-50 hover:opacity-100 transition-opacity" loading="lazy">
+          <img src="images/logo-third.png" alt="Reservoir" class="h-6 opacity-50 hover:opacity-100 transition-opacity" loading="lazy">
+          <img src="images/logo-taulabs.png" alt="TAU Labs" class="h-6 opacity-50 hover:opacity-100 transition-opacity" loading="lazy">
+          <img src="images/logo-k3capital.png" alt="K3 Capital" class="h-6 opacity-50 hover:opacity-100 transition-opacity" loading="lazy">
+          <img src="images/logo-navigator.png" alt="Tanken" class="h-6 opacity-50 hover:opacity-100 transition-opacity" loading="lazy">
+          <img src="images/logo-llamarisk.png" alt="LlamaRisk" class="h-6 opacity-50 hover:opacity-100 transition-opacity" loading="lazy">
         </div>
       </div>
     </div>
