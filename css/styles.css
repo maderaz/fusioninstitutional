@@ -61,12 +61,14 @@ body { font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; 
 .reveal-delay-4 { transition-delay: 0.4s; }
 
 /* ── Grayscale filter for logos ── */
-.grayscale {
-  filter: grayscale(100%);
+.logo-gray {
+  filter: grayscale(100%) !important;
+  opacity: 0.5 !important;
+  transition: filter 0.3s ease, opacity 0.3s ease;
 }
-.grayscale:hover,
-.hover\:grayscale-0:hover {
-  filter: grayscale(0%);
+.logo-gray:hover {
+  filter: grayscale(0%) !important;
+  opacity: 1 !important;
 }
 
 /* ── Nav glass effect ── */
