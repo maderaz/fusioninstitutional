@@ -191,46 +191,58 @@
 
       <!-- Featured testimonial -->
       <div class="rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-[#F5F5FA] dark:bg-[#161A20] p-8 md:p-12 mb-8 reveal">
-        <div class="flex items-center gap-4 mb-6">
-          <img src="images/avatar-james.png" alt="James Harris" class="w-14 h-14 rounded-full" loading="lazy">
-          <div>
-            <div class="font-semibold">James Harris</div>
-            <div class="text-sm text-[#70747A] dark:text-[#9BA3AF]">CEO · <img src="images/logo-tesseract.png" alt="Tesseract" class="h-4 inline align-middle ml-1"></div>
-          </div>
-          <span class="ml-auto text-xs px-3 py-1 rounded-full bg-[#8429FF]/10 text-[#8429FF] font-medium hidden sm:inline-block">$500M+ AUM, MiCA-Authorized</span>
+        <div class="flex items-start justify-between mb-6">
+          <span class="text-4xl text-[#8429FF]/30 font-serif leading-none">&ldquo;</span>
+          <img src="images/logo-tesseract.png" alt="Tesseract" class="logo-gray" style="height:18px" loading="lazy">
         </div>
-        <blockquote class="text-sm md:text-base leading-relaxed text-[#70747A] dark:text-[#9BA3AF]">
+        <blockquote class="text-sm md:text-base leading-relaxed text-[#70747A] dark:text-[#9BA3AF] mb-8 md:columns-2 md:gap-12">
           "Working with the IPOR Fusion team has been an exceptional experience. They bring a deep level of technical expertise and market understanding, but just as importantly, they are highly collaborative and really great to work with. Throughout our vault build, they have partnered closely with us, showing real commitment to getting the details right and helping us solve complex challenges as they arise. What stands out is their ability to combine strong infrastructure with a practical, delivery-focused mindset. The result is a solution that is not only truly institutional-grade, but also at the forefront of where the market is heading. They have been a key partner in helping us bring our vault vision to life, and couldn't recommend them more highly."
         </blockquote>
+        <div class="border-t border-[#E5E5E5] dark:border-[#2E3137] pt-6 flex items-center gap-4">
+          <img src="images/avatar-james.png" alt="James Harris" class="w-12 h-12 rounded-full" loading="lazy">
+          <div>
+            <div class="font-semibold text-sm">James Harris</div>
+            <div class="text-xs text-[#70747A] dark:text-[#9BA3AF]">CEO &middot; Tesseract</div>
+            <div class="text-xs text-[#8429FF]">$500M+ AUM, MiCA-Authorized</div>
+          </div>
+        </div>
       </div>
 
       <!-- Two smaller testimonials -->
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-[#F5F5FA] dark:bg-[#161A20] p-8 reveal reveal-delay-1">
-          <div class="flex items-center gap-4 mb-4">
-            <img src="images/avatar-vlad.png" alt="Vlad Totia" class="w-12 h-12 rounded-full" loading="lazy">
-            <div>
-              <div class="font-semibold">Vlad Totia</div>
-              <div class="text-sm text-[#70747A] dark:text-[#9BA3AF]">Founder · <img src="images/logo-taulabs.png" alt="TAU Labs" class="h-4 inline align-middle ml-1"></div>
-            </div>
-            <span class="ml-auto text-xs px-3 py-1 rounded-full bg-[#8429FF]/10 text-[#8429FF] font-medium hidden sm:inline-block">$100M+ TVM</span>
+        <div class="rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-[#F5F5FA] dark:bg-[#161A20] p-8 flex flex-col reveal reveal-delay-1">
+          <div class="flex items-start justify-between mb-4">
+            <span class="text-3xl text-[#8429FF]/30 font-serif leading-none">&ldquo;</span>
+            <img src="images/logo-taulabs.png" alt="TAU Labs" class="logo-gray" style="height:20px" loading="lazy">
           </div>
-          <blockquote class="text-sm leading-relaxed text-[#70747A] dark:text-[#9BA3AF]">
+          <blockquote class="text-sm leading-relaxed text-[#70747A] dark:text-[#9BA3AF] mb-8 flex-1">
             "IPOR Fusion drastically reduces our operational overhead, allowing us to launch better vaults, faster. Their team is always responsive to address any technical needs and proactive in helping us optimize our strategies."
           </blockquote>
-        </div>
-        <div class="rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-[#F5F5FA] dark:bg-[#161A20] p-8 reveal reveal-delay-2">
-          <div class="flex items-center gap-4 mb-4">
-            <img src="images/avatar-nick.png" alt="Nick Garcia" class="w-12 h-12 rounded-full" loading="lazy">
+          <div class="border-t border-[#E5E5E5] dark:border-[#2E3137] pt-6 flex items-center gap-4">
+            <img src="images/avatar-vlad.png" alt="Vlad Totia" class="w-10 h-10 rounded-full" loading="lazy">
             <div>
-              <div class="font-semibold">Nick Garcia</div>
-              <div class="text-sm text-[#70747A] dark:text-[#9BA3AF]">Founder · <img src="images/logo-third.png" alt="Reservoir" class="h-4 inline align-middle ml-1"></div>
+              <div class="font-semibold text-sm">Vlad Totia</div>
+              <div class="text-xs text-[#70747A] dark:text-[#9BA3AF]">Founder &middot; TAU Labs</div>
+              <div class="text-xs text-[#8429FF]">$100M+ TVM</div>
             </div>
-            <span class="ml-auto text-xs px-3 py-1 rounded-full bg-[#8429FF]/10 text-[#8429FF] font-medium hidden sm:inline-block">$100M+ TVM</span>
           </div>
-          <blockquote class="text-sm leading-relaxed text-[#70747A] dark:text-[#9BA3AF]">
-            "Reservoir has leveraged IPOR Fusion vaults to deliver high-efficiency, leveraged exposure to our yield-bearing stablecoin (wsrUSD) optimizing for liquidity and high returns. IPOR Fusion is robust, user-friendly, and seamless for onchain asset management—making it effortless for partners like us to scale sophisticated strategies with strong risk controls."
+        </div>
+        <div class="rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-[#F5F5FA] dark:bg-[#161A20] p-8 flex flex-col reveal reveal-delay-2">
+          <div class="flex items-start justify-between mb-4">
+            <span class="text-3xl text-[#8429FF]/30 font-serif leading-none">&ldquo;</span>
+            <img src="images/logo-third.png" alt="Reservoir" class="logo-gray" style="height:14px" loading="lazy">
+          </div>
+          <blockquote class="text-sm leading-relaxed text-[#70747A] dark:text-[#9BA3AF] mb-8 flex-1">
+            "Reservoir has leveraged IPOR Fusion vaults to deliver high-efficiency, leveraged exposure to our yield-bearing stablecoin (wsrUSD) optimizing for liquidity and high returns. Reservoir's BTC, ETH, and USDC denominated yield vaults offer industry leading risk adjusted yields through automated onchain risk management. IPOR Fusion is robust, user-friendly, and seamless for onchain asset management—making it effortless for partners like us to scale sophisticated strategies with strong risk controls. The IPOR Labs team has been exceptional to work with: responsive, innovative, and deeply aligned on building composable DeFi infrastructure."
           </blockquote>
+          <div class="border-t border-[#E5E5E5] dark:border-[#2E3137] pt-6 flex items-center gap-4">
+            <img src="images/avatar-nick.png" alt="Nick Garcia" class="w-10 h-10 rounded-full" loading="lazy">
+            <div>
+              <div class="font-semibold text-sm">Nick Garcia</div>
+              <div class="text-xs text-[#70747A] dark:text-[#9BA3AF]">Founder &middot; Reservoir</div>
+              <div class="text-xs text-[#8429FF]">$100M+ TVM</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
