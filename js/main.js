@@ -104,18 +104,37 @@
 
 /* ── Force grayscale on logos ── */
 (function initLogoGray() {
+  var isDark = document.documentElement.classList.contains('dark');
+  function getFilter() {
+    return document.documentElement.classList.contains('dark')
+      ? 'grayscale(100%)'
+      : 'grayscale(100%) brightness(0)';
+  }
   document.querySelectorAll('.logo-gray').forEach(function (img) {
-    img.style.filter = 'grayscale(100%)';
+    img.style.filter = getFilter();
     img.style.opacity = '0.5';
     img.addEventListener('mouseenter', function () {
-      img.style.filter = 'grayscale(0%)';
+      img.style.filter = 'none';
       img.style.opacity = '1';
     });
     img.addEventListener('mouseleave', function () {
-      img.style.filter = 'grayscale(100%)';
+      img.style.filter = getFilter();
       img.style.opacity = '0.5';
     });
   });
+  // Re-apply on theme toggle
+  var toggle = document.getElementById('theme-toggle');
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      setTimeout(function () {
+        document.querySelectorAll('.logo-gray').forEach(function (img) {
+          if (img.style.opacity === '0.5') {
+            img.style.filter = getFilter();
+          }
+        });
+      }, 50);
+    });
+  }
 })();
 
 /* ── Sticky Nav ── */
