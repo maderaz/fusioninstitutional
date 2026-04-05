@@ -1,15 +1,650 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fusion by IPOR | Institutional-Grade Vault Infrastructure</title>
+  <meta name="description" content="Deploy and manage onchain vault strategies with institutional-grade security. Modular infrastructure across Aave, Morpho, Euler, and more.">
+  <meta property="og:title" content="Fusion by IPOR | Institutional-Grade Vault Infrastructure">
+  <meta property="og:description" content="Deploy and manage onchain vault strategies or earn through professionally curated vaults.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { fontFamily: { poppins: ['Poppins','sans-serif'], source: ['"Source Sans 3"','sans-serif'], mono: ['"JetBrains Mono"','monospace'] } } }
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    (function(){var t=localStorage.getItem('fusion-theme');var d=!t?(window.innerWidth>=768):t==='dark';if(d)document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"IPOR Labs AG","url":"https://fusioninstitutional.vercel.app","description":"Institutional-grade vault infrastructure for onchain asset management."}
+  </script>
+</head>
+<body class="bg-[#F5F5FA] dark:bg-[#090E14] text-black dark:text-white font-poppins overflow-x-hidden">
 
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>IPOR Homepage Mock</title>
-    </head>
+  <!-- NAV -->
+  <header id="main-nav" class="fixed top-0 left-0 right-0 z-50 nav-glass bg-[#F5F5FA]/80 dark:bg-[#090E14]/80 border-b border-[#E5E5E5] dark:border-[#2E3137] transition-shadow">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="/" class="flex-shrink-0">
+        <img src="images/fusion-logo-light.png" alt="Fusion by IPOR" class="h-6 hidden dark:block">
+        <img src="images/fusion-logo-dark.png" alt="Fusion by IPOR" class="h-6 block dark:hidden">
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-[#70747A] dark:text-[#9BA3AF]">
+        <a href="#how-it-works" class="hover:text-black dark:hover:text-white transition-colors">How It Works</a>
+        <a href="#solutions" class="hover:text-black dark:hover:text-white transition-colors">Solutions</a>
+        <a href="#security" class="hover:text-black dark:hover:text-white transition-colors">Security</a>
+        <a href="https://docs.ipor.io/" target="_blank" rel="noopener" class="hover:text-black dark:hover:text-white transition-colors">Docs</a>
+      </nav>
+      <div class="hidden md:flex items-center gap-3">
+        <button id="theme-toggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors" aria-label="Toggle theme">
+          <svg class="icon-sun w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="https://docs.ipor.io/build-on-fusion/developer-guide/quick-start-guide" target="_blank" rel="noopener" class="text-sm font-semibold px-5 py-2.5 rounded-full border border-[#8429FF] text-[#8429FF] hover:bg-[#8429FF]/10 transition-colors">Build</a>
+        <a href="https://app.ipor.io/fusion" target="_blank" rel="noopener" class="btn-primary text-sm px-5 py-2.5">Launch App</a>
+      </div>
+      <button id="menu-toggle" class="md:hidden p-2" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </header>
 
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
-  </html>
-  
+  <!-- MOBILE MENU OVERLAY -->
+  <div id="menu-overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
+  <div id="mobile-menu" class="fixed top-0 right-0 h-full w-72 bg-white dark:bg-[#161A20] z-50 transform translate-x-full transition-transform duration-300 p-6 flex flex-col gap-6">
+    <button onclick="document.getElementById('mobile-menu').classList.add('translate-x-full');document.getElementById('menu-overlay').classList.add('hidden');document.body.style.overflow=''" class="self-end p-2">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <nav class="flex flex-col gap-4 text-base font-medium">
+      <a href="#how-it-works" class="py-2 hover:text-[#8429FF]">How It Works</a>
+      <a href="#solutions" class="py-2 hover:text-[#8429FF]">Solutions</a>
+      <a href="#security" class="py-2 hover:text-[#8429FF]">Security</a>
+      <a href="https://docs.ipor.io/" target="_blank" class="py-2 hover:text-[#8429FF]">Docs</a>
+    </nav>
+    <div class="flex flex-col gap-3 mt-auto">
+      <a href="https://docs.ipor.io/build-on-fusion/developer-guide/quick-start-guide" target="_blank" class="text-center text-sm font-semibold px-5 py-2.5 rounded-full border border-[#8429FF] text-[#8429FF]">Build</a>
+      <a href="https://app.ipor.io/fusion" target="_blank" class="btn-primary text-sm text-center px-5 py-2.5">Launch App</a>
+    </div>
+  </div>
+
+  <main>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-16 md:pt-36 md:pb-24 px-6">
+    <div class="max-w-7xl mx-auto text-center">
+      <h1 class="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6 reveal">
+        Vault infrastructure for<br><span class="gradient-text">institutional-grade</span> yield.
+      </h1>
+      <p class="text-base md:text-lg text-[#70747A] dark:text-[#9BA3AF] max-w-2xl mx-auto mb-10 reveal reveal-delay-1">
+        Deploy and manage onchain vault strategies or earn through professionally curated vaults. Modular infrastructure across Aave, Morpho, SparkLend, Euler, and more.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 reveal reveal-delay-2">
+        <a href="https://app.ipor.io/fusion" target="_blank" rel="noopener" class="btn-primary text-base px-8 py-3">Launch App</a>
+        <a href="https://docs.ipor.io/build-on-fusion/developer-guide/quick-start-guide" target="_blank" rel="noopener" class="btn-outline text-base px-8 py-3">Start Building</a>
+      </div>
+
+      <!-- Stats -->
+      <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 mb-16 reveal reveal-delay-3">
+        <div class="text-center">
+          <div class="text-2xl md:text-3xl font-bold font-source">$250M</div>
+          <div class="text-xs text-[#70747A] dark:text-[#9BA3AF] mt-1">TVM</div>
+        </div>
+        <div class="w-px h-10 bg-[#E5E5E5] dark:bg-[#2E3137]"></div>
+        <div class="text-center">
+          <div class="text-2xl md:text-3xl font-bold font-source">103</div>
+          <div class="text-xs text-[#70747A] dark:text-[#9BA3AF] mt-1">Vaults</div>
+        </div>
+        <div class="w-px h-10 bg-[#E5E5E5] dark:bg-[#2E3137]"></div>
+        <div class="text-center">
+          <div class="text-2xl md:text-3xl font-bold font-source">$10B+</div>
+          <div class="text-xs text-[#70747A] dark:text-[#9BA3AF] mt-1">Volume processed</div>
+        </div>
+      </div>
+
+      <!-- App Mock -->
+      <div class="max-w-4xl mx-auto reveal reveal-delay-4">
+        <img src="images/app-mock.png" alt="Fusion App Dashboard" class="w-full rounded-2xl shadow-2xl" loading="lazy">
+      </div>
+
+      <!-- Trusted By logos marquee -->
+      <div class="mt-16 reveal">
+        <p class="text-xs text-[#70747A] dark:text-[#9BA3AF] uppercase tracking-widest mb-6">Trusted by</p>
+        <div class="overflow-hidden">
+          <div class="flex items-center gap-12 animate-marquee whitespace-nowrap">
+            <img src="images/logo-tesseract.png" alt="Tesseract" class="h-6 opacity-60 hover:opacity-100 transition-opacity">
+            <img src="images/logo-first.png" alt="First" class="h-6 opacity-60 hover:opacity-100 transition-opacity">
+            <img src="images/logo-third.png" alt="Reservoir" class="h-6 opacity-60 hover:opacity-100 transition-opacity">
+            <img src="images/logo-taulabs.png" alt="TAU Labs" class="h-6 opacity-60 hover:opacity-100 transition-opacity">
+            <img src="images/logo-k3capital.png" alt="K3 Capital" class="h-6 opacity-60 hover:opacity-100 transition-opacity">
+            <img src="images/logo-navigator.png" alt="Navigator" class="h-6 opacity-60 hover:opacity-100 transition-opacity">
+            <img src="images/logo-llamarisk.png" alt="Llama Risk" class="h-6 opacity-60 hover:opacity-100 transition-opacity">
+            <!-- duplicate for seamless loop -->
+            <img src="images/logo-tesseract.png" alt="Tesseract" class="h-6 opacity-60">
+            <img src="images/logo-first.png" alt="First" class="h-6 opacity-60">
+            <img src="images/logo-third.png" alt="Reservoir" class="h-6 opacity-60">
+            <img src="images/logo-taulabs.png" alt="TAU Labs" class="h-6 opacity-60">
+            <img src="images/logo-k3capital.png" alt="K3 Capital" class="h-6 opacity-60">
+            <img src="images/logo-navigator.png" alt="Navigator" class="h-6 opacity-60">
+            <img src="images/logo-llamarisk.png" alt="Llama Risk" class="h-6 opacity-60">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSPARENCY -->
+  <section id="transparency" class="py-16 md:py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <span class="text-xs font-semibold uppercase tracking-widest text-[#8429FF] mb-4 block">Full Transparency</span>
+        <h2 class="text-2xl md:text-4xl font-semibold mb-4">See everything. <span class="gradient-text">Trust nothing blindly.</span></h2>
+        <p class="text-[#70747A] dark:text-[#9BA3AF] max-w-2xl mx-auto">Every vault in Fusion exposes its full mechanics: allocations, performance, costs, and onchain activity. You always know exactly what's happening with your capital.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] overflow-hidden reveal">
+          <img src="images/app-mock.png" alt="Fusion Dashboard showing vault transparency" class="w-full" loading="lazy">
+        </div>
+        <div class="space-y-4 reveal reveal-delay-1">
+          <div class="flex items-center gap-3 p-4 rounded-xl bg-white dark:bg-[#161A20] border border-[#E5E5E5] dark:border-[#2E3137]">
+            <svg class="w-5 h-5 text-[#8429FF] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            <span class="text-sm font-medium">Real-Time Performance Reports</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 rounded-xl bg-white dark:bg-[#161A20] border border-[#E5E5E5] dark:border-[#2E3137]">
+            <svg class="w-5 h-5 text-[#8429FF] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            <span class="text-sm font-medium">Historical Allocation Breakdown</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 rounded-xl bg-white dark:bg-[#161A20] border border-[#E5E5E5] dark:border-[#2E3137]">
+            <svg class="w-5 h-5 text-[#8429FF] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            <span class="text-sm font-medium">Protocol-Level Credit Markets</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 rounded-xl bg-white dark:bg-[#161A20] border border-[#E5E5E5] dark:border-[#2E3137]">
+            <svg class="w-5 h-5 text-[#8429FF] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            <span class="text-sm font-medium">Live Yield Metrics</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 rounded-xl bg-white dark:bg-[#161A20] border border-[#E5E5E5] dark:border-[#2E3137]">
+            <svg class="w-5 h-5 text-[#8429FF] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            <span class="text-sm font-medium">Transaction-Level Auditability</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 rounded-xl bg-white dark:bg-[#161A20] border border-[#E5E5E5] dark:border-[#2E3137]">
+            <svg class="w-5 h-5 text-[#8429FF] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            <span class="text-sm font-medium">Cost &amp; Slippage Transparency</span>
+          </div>
+        </div>
+      </div>
+      <p class="text-xs text-[#70747A] dark:text-[#9BA3AF] text-center mt-8 italic">*Product interface shown for illustrative purposes only. Displayed values are simulated and do not represent actual portfolio performance, balances, or guaranteed returns.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-16 md:py-24 px-6 bg-white dark:bg-[#0D1117]">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <span class="text-xs font-semibold uppercase tracking-widest text-[#8429FF] mb-4 block">Testimonials</span>
+        <h2 class="text-2xl md:text-4xl font-semibold mb-4">Trusted by the teams <span class="gradient-text">building</span> the future of onchain capital.</h2>
+        <p class="text-[#70747A] dark:text-[#9BA3AF] max-w-2xl mx-auto">Leading curators, asset managers and projects rely on Fusion to power their onchain strategies.</p>
+      </div>
+
+      <!-- Featured testimonial -->
+      <div class="rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-[#F5F5FA] dark:bg-[#161A20] p-8 md:p-12 mb-8 reveal">
+        <div class="flex items-center gap-4 mb-6">
+          <img src="images/avatar-james.png" alt="James Harris" class="w-14 h-14 rounded-full" loading="lazy">
+          <div>
+            <div class="font-semibold">James Harris</div>
+            <div class="text-sm text-[#70747A] dark:text-[#9BA3AF]">CEO · <img src="images/logo-tesseract.png" alt="Tesseract" class="h-4 inline align-middle ml-1"></div>
+          </div>
+          <span class="ml-auto text-xs px-3 py-1 rounded-full bg-[#8429FF]/10 text-[#8429FF] font-medium hidden sm:inline-block">$500M+ AUM, MiCA-Authorized</span>
+        </div>
+        <blockquote class="text-sm md:text-base leading-relaxed text-[#70747A] dark:text-[#9BA3AF]">
+          "Working with the IPOR Fusion team has been an exceptional experience. They bring a deep level of technical expertise and market understanding, but just as importantly, they are highly collaborative and really great to work with. Throughout our vault build, they have partnered closely with us, showing real commitment to getting the details right and helping us solve complex challenges as they arise. What stands out is their ability to combine strong infrastructure with a practical, delivery-focused mindset. The result is a solution that is not only truly institutional-grade, but also at the forefront of where the market is heading. They have been a key partner in helping us bring our vault vision to life, and couldn't recommend them more highly."
+        </blockquote>
+      </div>
+
+      <!-- Two smaller testimonials -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-[#F5F5FA] dark:bg-[#161A20] p-8 reveal reveal-delay-1">
+          <div class="flex items-center gap-4 mb-4">
+            <img src="images/avatar-vlad.png" alt="Vlad Totia" class="w-12 h-12 rounded-full" loading="lazy">
+            <div>
+              <div class="font-semibold">Vlad Totia</div>
+              <div class="text-sm text-[#70747A] dark:text-[#9BA3AF]">Founder · <img src="images/logo-taulabs.png" alt="TAU Labs" class="h-4 inline align-middle ml-1"></div>
+            </div>
+            <span class="ml-auto text-xs px-3 py-1 rounded-full bg-[#8429FF]/10 text-[#8429FF] font-medium hidden sm:inline-block">$100M+ TVM</span>
+          </div>
+          <blockquote class="text-sm leading-relaxed text-[#70747A] dark:text-[#9BA3AF]">
+            "IPOR Fusion drastically reduces our operational overhead, allowing us to launch better vaults, faster. Their team is always responsive to address any technical needs and proactive in helping us optimize our strategies."
+          </blockquote>
+        </div>
+        <div class="rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-[#F5F5FA] dark:bg-[#161A20] p-8 reveal reveal-delay-2">
+          <div class="flex items-center gap-4 mb-4">
+            <img src="images/avatar-nick.png" alt="Nick Garcia" class="w-12 h-12 rounded-full" loading="lazy">
+            <div>
+              <div class="font-semibold">Nick Garcia</div>
+              <div class="text-sm text-[#70747A] dark:text-[#9BA3AF]">Founder · <img src="images/logo-third.png" alt="Reservoir" class="h-4 inline align-middle ml-1"></div>
+            </div>
+            <span class="ml-auto text-xs px-3 py-1 rounded-full bg-[#8429FF]/10 text-[#8429FF] font-medium hidden sm:inline-block">$100M+ TVM</span>
+          </div>
+          <blockquote class="text-sm leading-relaxed text-[#70747A] dark:text-[#9BA3AF]">
+            "Reservoir has leveraged IPOR Fusion vaults to deliver high-efficiency, leveraged exposure to our yield-bearing stablecoin (wsrUSD) optimizing for liquidity and high returns. IPOR Fusion is robust, user-friendly, and seamless for onchain asset management—making it effortless for partners like us to scale sophisticated strategies with strong risk controls."
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="py-16 md:py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <span class="text-xs font-semibold uppercase tracking-widest text-[#8429FF] mb-4 block">Why Fusion</span>
+        <h2 class="text-2xl md:text-4xl font-semibold mb-4">Infrastructure that enforces your <span class="gradient-text">edge</span>.</h2>
+        <p class="text-[#70747A] dark:text-[#9BA3AF] max-w-2xl mx-auto">Every component of Fusion is designed for asset managers who need performance, transparency, and composability at institutional scale.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-white dark:bg-[#161A20] p-8 reveal">
+          <div class="w-10 h-10 rounded-xl bg-[#8429FF]/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </div>
+          <h3 class="text-base font-semibold mb-2">Modular Vault Architecture</h3>
+          <p class="text-sm text-[#70747A] dark:text-[#9BA3AF]">Compose strategies from reusable building blocks. Mix lending, staking, and LP positions in a single vault with full atomicity.</p>
+        </div>
+        <div class="rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-white dark:bg-[#161A20] p-8 reveal reveal-delay-1">
+          <div class="w-10 h-10 rounded-xl bg-[#8429FF]/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3 class="text-base font-semibold mb-2">Efficient Off-Chain Execution</h3>
+          <p class="text-sm text-[#70747A] dark:text-[#9BA3AF]">Alpha engines execute strategy logic off-chain and batch operations onchain through governance-approved parameters, minimizing transaction overhead while maintaining full transparency.</p>
+        </div>
+        <div class="rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-white dark:bg-[#161A20] p-8 reveal reveal-delay-2">
+          <div class="w-10 h-10 rounded-xl bg-[#8429FF]/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="text-base font-semibold mb-2">Institutional-Grade Risk Controls</h3>
+          <p class="text-sm text-[#70747A] dark:text-[#9BA3AF]">Real-time exposure monitoring, Guardian roles for emergency actions, and configurable market limits ensure capital protection at every layer of the stack.</p>
+        </div>
+        <div class="rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-white dark:bg-[#161A20] p-8 reveal reveal-delay-1">
+          <div class="w-10 h-10 rounded-xl bg-[#8429FF]/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3 class="text-base font-semibold mb-2">Multi-Chain Execution</h3>
+          <p class="text-sm text-[#70747A] dark:text-[#9BA3AF]">Deploy identical strategies across Ethereum, Arbitrum, Base, and Unichain from a single interface with unified reporting.</p>
+        </div>
+        <div class="sm:col-span-2 rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-white dark:bg-[#161A20] p-8 reveal reveal-delay-2">
+          <div class="w-10 h-10 rounded-xl bg-[#8429FF]/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <h3 class="text-base font-semibold mb-2">Transparent Performance Analytics</h3>
+          <p class="text-sm text-[#70747A] dark:text-[#9BA3AF]">On-chain verifiable P&amp;L, historical NAV tracking, and strategy attribution, all visible on the Fusion dashboard and verifiable directly from smart contracts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="py-16 md:py-24 px-6 bg-white dark:bg-[#0D1117]">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <span class="text-xs font-semibold uppercase tracking-widest text-[#8429FF] mb-4 block">Architecture</span>
+        <h2 class="text-2xl md:text-4xl font-semibold mb-4">One vault. Every strategy.<br>Full control.</h2>
+        <p class="text-[#70747A] dark:text-[#9BA3AF] max-w-3xl mx-auto">Fusion's modular architecture separates execution from custody. Deploy capital into Fusion Plasma Vaults, connect strategy logic through composable fuses, and let Alpha engines optimize across them, all in a plug &amp; play fashion, fully customizable per strategy needs.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center reveal">
+          <div class="w-14 h-14 rounded-2xl bg-[#8429FF]/10 flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold text-[#8429FF]">1</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-3">Fusion Vaults</h3>
+          <p class="text-sm text-[#70747A] dark:text-[#9BA3AF]">ERC-4626 compliant, immutable vaults that hold your assets. Each vault is fully isolated with siloed risk and no cross-contamination. Deposit once, access every integrated market.</p>
+        </div>
+        <div class="text-center reveal reveal-delay-1">
+          <div class="w-14 h-14 rounded-2xl bg-[#8429FF]/10 flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold text-[#8429FF]">2</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-3">Fuse Modules</h3>
+          <p class="text-sm text-[#70747A] dark:text-[#9BA3AF]">Composable, non-upgradable smart contract connectors to external protocols. Supply, borrow, swap, loop: each action is a fuse. Snap new ones in, never touch the vault.</p>
+        </div>
+        <div class="text-center reveal reveal-delay-2">
+          <div class="w-14 h-14 rounded-2xl bg-[#8429FF]/10 flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold text-[#8429FF]">3</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-3">Alpha Execution</h3>
+          <p class="text-sm text-[#70747A] dark:text-[#9BA3AF]">Off-chain strategy engines execute onchain through governance-approved parameters. Automated rebalancing, carry trades, looping, and arbitrage, all intelligence-driven and risk-bounded.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTIONS -->
+  <section id="solutions" class="py-16 md:py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <span class="text-xs font-semibold uppercase tracking-widest text-[#8429FF] mb-4 block">Solutions</span>
+        <h2 class="text-2xl md:text-4xl font-semibold mb-4">Built for every participant in the <span class="gradient-text">vault</span> stack.</h2>
+        <p class="text-[#70747A] dark:text-[#9BA3AF] max-w-2xl mx-auto">Whether you're allocating treasury capital or building the next yield product, Fusion is the infrastructure layer underneath.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <!-- Card 1 -->
+        <div class="rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-white dark:bg-[#161A20] p-8 reveal">
+          <h3 class="text-lg font-semibold mb-3">Institutions &amp; Fund Managers</h3>
+          <p class="text-sm text-[#70747A] dark:text-[#9BA3AF] mb-5">Sovereign vault infrastructure for onchain asset management. Deploy capital with institutional-grade security, full transparency, and customizable risk parameters. Your vault, your rules, your alpha.</p>
+          <ul class="space-y-2 text-sm text-[#70747A] dark:text-[#9BA3AF]">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Privacy-preserving strategy execution</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Configurable fee structures &amp; governance</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Python SDK, no Solidity required</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>White-label ready for distribution partners</li>
+          </ul>
+        </div>
+        <!-- Card 2 -->
+        <div class="rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-white dark:bg-[#161A20] p-8 reveal reveal-delay-1">
+          <h3 class="text-lg font-semibold mb-3">Builders &amp; Curators</h3>
+          <p class="text-sm text-[#70747A] dark:text-[#9BA3AF] mb-5">Create automated onchain vaults without writing a single smart contract. Pick your fuses, set your parameters, and launch. Earn curator fees from the strategies you design.</p>
+          <ul class="space-y-2 text-sm text-[#70747A] dark:text-[#9BA3AF]">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Plug-and-play fuse library</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>One-click vault deployment via Factory</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Composable across 20+ protocols</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Earn fees as an Atomist</li>
+          </ul>
+        </div>
+        <!-- Card 3 -->
+        <div class="rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-white dark:bg-[#161A20] p-8 reveal">
+          <h3 class="text-lg font-semibold mb-3">Liquidity Providers</h3>
+          <p class="text-sm text-[#70747A] dark:text-[#9BA3AF] mb-5">Access professionally curated, auto-optimized yield strategies with a single deposit. From lending optimization to leveraged looping, risk-adjusted to your preference.</p>
+          <ul class="space-y-2 text-sm text-[#70747A] dark:text-[#9BA3AF]">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>One-click deposit into curated strategies</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Automated rebalancing &amp; compounding</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Siloed risk, no socialized losses</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Instant liquidity, no lockups</li>
+          </ul>
+        </div>
+        <!-- Card 4 -->
+        <div class="rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-white dark:bg-[#161A20] p-8 reveal reveal-delay-1">
+          <h3 class="text-lg font-semibold mb-3">Protocols &amp; Distributors</h3>
+          <p class="text-sm text-[#70747A] dark:text-[#9BA3AF] mb-5">Embed Fusion vaults as plug-and-play yield products. Wallets, exchanges, and fintechs can offer 'Earn' features powered by Fusion infrastructure without building from scratch.</p>
+          <ul class="space-y-2 text-sm text-[#70747A] dark:text-[#9BA3AF]">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Embed vaults into any interface</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>White-label for wallets &amp; CEXs</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Referral system built-in</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Invisible infrastructure, visible yield</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="py-16 md:py-24 px-6 bg-white dark:bg-[#0D1117]">
+    <div class="max-w-7xl mx-auto text-center reveal">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-3">Plug &amp; Play</h2>
+      <p class="text-[#70747A] dark:text-[#9BA3AF] max-w-xl mx-auto mb-12">Connect to leading onchain liquidity protocols through composable fuse modules.</p>
+      <div class="grid grid-cols-3 md:grid-cols-6 gap-6">
+        <div class="flex flex-col items-center gap-3 p-6 rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-[#F5F5FA] dark:bg-[#161A20] hover:border-[#8429FF]/50 transition-colors">
+          <img src="images/logo-aave.png" alt="Aave" class="h-10" loading="lazy">
+          <span class="text-xs font-medium">Aave V3</span>
+        </div>
+        <div class="flex flex-col items-center gap-3 p-6 rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-[#F5F5FA] dark:bg-[#161A20] hover:border-[#8429FF]/50 transition-colors">
+          <img src="images/logo-morpho.png" alt="Morpho" class="h-10" loading="lazy">
+          <span class="text-xs font-medium">Morpho</span>
+        </div>
+        <div class="flex flex-col items-center gap-3 p-6 rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-[#F5F5FA] dark:bg-[#161A20] hover:border-[#8429FF]/50 transition-colors">
+          <img src="images/logo-uniswap.png" alt="Uniswap" class="h-10" loading="lazy">
+          <span class="text-xs font-medium">Uniswap</span>
+        </div>
+        <div class="flex flex-col items-center gap-3 p-6 rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-[#F5F5FA] dark:bg-[#161A20] hover:border-[#8429FF]/50 transition-colors">
+          <img src="images/logo-compound.png" alt="Compound" class="h-10" loading="lazy">
+          <span class="text-xs font-medium">Compound</span>
+        </div>
+        <div class="flex flex-col items-center gap-3 p-6 rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-[#F5F5FA] dark:bg-[#161A20] hover:border-[#8429FF]/50 transition-colors">
+          <img src="images/logo-pendle.png" alt="Pendle" class="h-10" loading="lazy">
+          <span class="text-xs font-medium">Pendle</span>
+        </div>
+        <a href="https://github.com/IPOR-Labs/ipor-fusion/tree/main/contracts/fuses" target="_blank" rel="noopener" class="flex flex-col items-center justify-center gap-3 p-6 rounded-2xl border border-dashed border-[#8429FF]/40 bg-[#8429FF]/5 hover:bg-[#8429FF]/10 transition-colors">
+          <span class="text-2xl">+</span>
+          <span class="text-xs font-medium text-[#8429FF]">More Protocols</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="py-16 md:py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <span class="text-xs font-semibold uppercase tracking-widest text-[#8429FF] mb-4 block">Better by Design</span>
+        <h2 class="text-2xl md:text-4xl font-semibold mb-4">How Fusion Vaults <span class="gradient-text">outperform</span> the alternative.</h2>
+        <p class="text-[#70747A] dark:text-[#9BA3AF] max-w-2xl mx-auto">Merkle proof vaults were a first step. Fusion is the leap forward: transparent, composable, and built for speed.</p>
+      </div>
+      <div class="overflow-x-auto reveal">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="border-b border-[#E5E5E5] dark:border-[#2E3137]">
+              <th class="text-left py-4 px-4 font-semibold w-1/4">Feature</th>
+              <th class="text-left py-4 px-4 font-semibold text-[#8429FF]">Fusion</th>
+              <th class="text-left py-4 px-4 font-semibold text-[#70747A] dark:text-[#9BA3AF]">Merkle Proof Vaults</th>
+            </tr>
+          </thead>
+          <tbody class="text-[#70747A] dark:text-[#9BA3AF]">
+            <tr class="border-b border-[#E5E5E5] dark:border-[#2E3137]">
+              <td class="py-4 px-4 font-medium text-black dark:text-white">Strategy gating</td>
+              <td class="py-4 px-4">Smart contract enforced, transparent onchain</td>
+              <td class="py-4 px-4">Proof enforced, opaque and sidechain/offchain</td>
+            </tr>
+            <tr class="border-b border-[#E5E5E5] dark:border-[#2E3137]">
+              <td class="py-4 px-4 font-medium text-black dark:text-white">Trust assumptions</td>
+              <td class="py-4 px-4">Trust minimized</td>
+              <td class="py-4 px-4">Trust minimized but opaque</td>
+            </tr>
+            <tr class="border-b border-[#E5E5E5] dark:border-[#2E3137]">
+              <td class="py-4 px-4 font-medium text-black dark:text-white">Onchain transparency</td>
+              <td class="py-4 px-4">Assets, actions, markets</td>
+              <td class="py-4 px-4">Execution result only</td>
+            </tr>
+            <tr class="border-b border-[#E5E5E5] dark:border-[#2E3137]">
+              <td class="py-4 px-4 font-medium text-black dark:text-white">Execution</td>
+              <td class="py-4 px-4">Flexible, adaptable</td>
+              <td class="py-4 px-4">Rigid, proof must be updated for any change</td>
+            </tr>
+            <tr class="border-b border-[#E5E5E5] dark:border-[#2E3137]">
+              <td class="py-4 px-4 font-medium text-black dark:text-white">Speed</td>
+              <td class="py-4 px-4">On the fly</td>
+              <td class="py-4 px-4">Governance latency</td>
+            </tr>
+            <tr class="border-b border-[#E5E5E5] dark:border-[#2E3137]">
+              <td class="py-4 px-4 font-medium text-black dark:text-white">Composability</td>
+              <td class="py-4 px-4">Administrative, onchain configured</td>
+              <td class="py-4 px-4">Administrative heavy, prepare proof and verify</td>
+            </tr>
+            <tr class="border-b border-[#E5E5E5] dark:border-[#2E3137]">
+              <td class="py-4 px-4 font-medium text-black dark:text-white">Technical expertise</td>
+              <td class="py-4 px-4">No smart contract experience required for strategy iteration</td>
+              <td class="py-4 px-4">Each path requires a merkle proof, explosion of paths means operational bloat</td>
+            </tr>
+            <tr class="border-b border-[#E5E5E5] dark:border-[#2E3137]">
+              <td class="py-4 px-4 font-medium text-black dark:text-white">IP Protection</td>
+              <td class="py-4 px-4">IP can be fully protected within bespoke execution logic</td>
+              <td class="py-4 px-4">IP is either fully opaque or fully disclosed once proof is exposed</td>
+            </tr>
+            <tr class="border-b border-[#E5E5E5] dark:border-[#2E3137]">
+              <td class="py-4 px-4 font-medium text-black dark:text-white">Risk management</td>
+              <td class="py-4 px-4">Adaptable and agile</td>
+              <td class="py-4 px-4">Rigid and time consuming requiring proof updates</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4 font-medium text-black dark:text-white">Security</td>
+              <td class="py-4 px-4">Fuses are modular and reusable, secure and fast to market</td>
+              <td class="py-4 px-4">Each path requires a new risk surface assessment</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECURITY -->
+  <section id="security" class="py-16 md:py-24 px-6 bg-white dark:bg-[#0D1117]">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <span class="text-xs font-semibold uppercase tracking-widest text-[#8429FF] mb-4 block">Security</span>
+        <h2 class="text-2xl md:text-4xl font-semibold mb-4">Transparent &amp; battle-tested <span class="gradient-text">vault</span> infrastructure.</h2>
+        <p class="text-[#70747A] dark:text-[#9BA3AF] max-w-3xl mx-auto">Immutable vault logic. Non-upgradable fuses. Role-based access control. Fusion is built by engineers from banking, payments, and insurance, and audited by the best in Web3.</p>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-3 gap-6 mb-12 reveal">
+        <div class="text-center p-6 rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137]">
+          <div class="text-3xl md:text-4xl font-bold text-[#8429FF] font-source">10+</div>
+          <div class="text-sm text-[#70747A] dark:text-[#9BA3AF] mt-2">Independent security audits</div>
+        </div>
+        <div class="text-center p-6 rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137]">
+          <div class="text-3xl md:text-4xl font-bold text-[#8429FF] font-source">100%</div>
+          <div class="text-sm text-[#70747A] dark:text-[#9BA3AF] mt-2">Immutable vault &amp; fuse contracts</div>
+        </div>
+        <div class="text-center p-6 rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137]">
+          <div class="text-3xl md:text-4xl font-bold text-[#8429FF] font-source">0</div>
+          <div class="text-sm text-[#70747A] dark:text-[#9BA3AF] mt-2">Admin keys over depositor funds</div>
+        </div>
+      </div>
+
+      <!-- Code block -->
+      <div class="rounded-xl border border-[#E5E5E5] dark:border-[#2E3137] overflow-hidden mb-12 reveal">
+        <div class="flex items-center justify-between px-5 py-3 bg-[#8429FF]/5 border-b border-[#E5E5E5] dark:border-[#2E3137]">
+          <div class="flex items-center gap-3">
+            <div class="flex gap-1.5">
+              <div class="h-3 w-3 rounded-full bg-[#8429FF]/20"></div>
+              <div class="h-3 w-3 rounded-full bg-[#8429FF]/12"></div>
+              <div class="h-3 w-3 rounded-full bg-[#8429FF]/6"></div>
+            </div>
+            <span class="text-xs font-medium text-[#8429FF]">FusionFactory.sol</span>
+          </div>
+          <a href="https://github.com/IPOR-Labs/ipor-fusion/blob/main/contracts/factory/FusionFactory.sol" target="_blank" rel="noopener" class="text-xs text-[#8429FF] hover:underline">View on GitHub →</a>
+        </div>
+        <div class="p-6 bg-white dark:bg-[#0D1117] font-mono text-xs leading-relaxed overflow-x-auto">
+          <pre class="text-[#70747A] dark:text-[#9BA3AF]"><span class="text-[#6A737D]">// SPDX-License-Identifier: BUSL-1.1</span>
+<span class="text-[#D73A49] dark:text-[#F97583]">pragma</span> solidity 0.8.26;
+
+<span class="text-[#D73A49] dark:text-[#F97583]">import</span> {<span class="text-[#6F42C1] dark:text-[#B392F0]">UUPSUpgradeable</span>} <span class="text-[#D73A49] dark:text-[#F97583]">from</span> <span class="text-[#032F62] dark:text-[#9ECBFF]">"@openzeppelin/..."</span>;
+
+<span class="text-[#D73A49] dark:text-[#F97583]">contract</span> <span class="text-[#6F42C1] dark:text-[#B392F0]">FusionFactory</span> <span class="text-[#D73A49] dark:text-[#F97583]">is</span> <span class="text-[#6F42C1] dark:text-[#B392F0]">UUPSUpgradeable</span>, <span class="text-[#6F42C1] dark:text-[#B392F0]">FusionFactoryAccessControl</span> {
+    <span class="text-[#D73A49] dark:text-[#F97583]">event</span> <span class="text-[#6F42C1] dark:text-[#B392F0]">PlasmaVaultCreated</span>(
+        <span class="text-[#6F42C1] dark:text-[#B392F0]">address</span> plasmaVault,
+        <span class="text-[#6F42C1] dark:text-[#B392F0]">address</span> accessManager
+    );
+    <span class="text-[#D73A49] dark:text-[#F97583]">event</span> <span class="text-[#6F42C1] dark:text-[#B392F0]">FusionVaultCreated</span>(
+        <span class="text-[#6F42C1] dark:text-[#B392F0]">address</span> fusionVault,
+        <span class="text-[#6F42C1] dark:text-[#B392F0]">address</span> accessManager
+    );
+}</pre>
+        </div>
+      </div>
+
+      <!-- Auditors -->
+      <div class="text-center reveal">
+        <p class="text-xs text-[#70747A] dark:text-[#9BA3AF] uppercase tracking-widest mb-6">Audited &amp; security reviewed by</p>
+        <div class="flex items-center justify-center gap-8 md:gap-16">
+          <img src="images/logo-blocksec.png" alt="BlockSec" class="h-8 opacity-70 hover:opacity-100 transition-opacity" loading="lazy">
+          <img src="images/logo-ackee.png" alt="Ackee Blockchain" class="h-8 opacity-70 hover:opacity-100 transition-opacity" loading="lazy">
+          <img src="images/logo-protofire.png" alt="Protofire" class="h-8 opacity-70 hover:opacity-100 transition-opacity" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-16 md:py-24 px-6">
+    <div class="max-w-3xl mx-auto text-center reveal">
+      <h2 class="text-2xl md:text-4xl font-semibold mb-4">The <span class="gradient-text">Vault</span> layer is ready.</h2>
+      <p class="text-[#70747A] dark:text-[#9BA3AF] mb-10">Deploy your first vault, deposit into a curated strategy, or embed Fusion into your product.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://app.ipor.io/fusion" target="_blank" rel="noopener" class="btn-primary text-base px-8 py-3">Launch App</a>
+        <a href="https://docs.ipor.io/build-on-fusion/developer-guide/quick-start-guide" target="_blank" rel="noopener" class="btn-outline text-base px-8 py-3">Start Building</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-[#E5E5E5] dark:border-[#2E3137] bg-white dark:bg-[#0D1117] py-16 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
+        <!-- Brand -->
+        <div class="col-span-2 md:col-span-1">
+          <img src="images/fusion-logo-light.png" alt="Fusion by IPOR" class="h-5 mb-4 hidden dark:block">
+          <img src="images/fusion-logo-dark.png" alt="Fusion by IPOR" class="h-5 mb-4 block dark:hidden">
+          <p class="text-xs text-[#70747A] dark:text-[#9BA3AF]">Onchain vault infrastructure for asset managers, institutions, and builders. Create, white-label and earn.</p>
+        </div>
+        <!-- Product -->
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider mb-4">Product</h4>
+          <ul class="space-y-2 text-sm text-[#70747A] dark:text-[#9BA3AF]">
+            <li><a href="#" class="hover:text-[#8429FF] transition-colors">Fusion Vaults</a></li>
+            <li><a href="https://app.ipor.io/swaps/ethereum" target="_blank" class="hover:text-[#8429FF] transition-colors">Interest Rate Swaps</a></li>
+            <li><a href="talk-to-sales.html" class="hover:text-[#8429FF] transition-colors">Talk to Sales</a></li>
+            <li><a href="founder-letter.html" class="hover:text-[#8429FF] transition-colors">Founder Letter</a></li>
+          </ul>
+        </div>
+        <!-- Governance -->
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider mb-4">Governance</h4>
+          <ul class="space-y-2 text-sm text-[#70747A] dark:text-[#9BA3AF]">
+            <li><a href="https://snapshot.org/#/s:ipordao.eth" target="_blank" class="hover:text-[#8429FF] transition-colors">Snapshot</a></li>
+            <li><span class="opacity-50">FUSN Token <span class="text-xs bg-[#8429FF]/10 text-[#8429FF] px-2 py-0.5 rounded-full ml-1">Soon</span></span></li>
+          </ul>
+        </div>
+        <!-- Security -->
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider mb-4">Security</h4>
+          <ul class="space-y-2 text-sm text-[#70747A] dark:text-[#9BA3AF]">
+            <li><a href="https://docs.ipor.io/build-on-fusion/developer-guide/audits" target="_blank" class="hover:text-[#8429FF] transition-colors">Audits</a></li>
+            <li><a href="https://immunefi.com/bug-bounty/ipor/information/" target="_blank" class="hover:text-[#8429FF] transition-colors">Bug Bounty</a></li>
+          </ul>
+        </div>
+        <!-- Developers -->
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider mb-4">Developers</h4>
+          <ul class="space-y-2 text-sm text-[#70747A] dark:text-[#9BA3AF]">
+            <li><a href="https://docs.ipor.io/" target="_blank" class="hover:text-[#8429FF] transition-colors">Documentation</a></li>
+            <li><a href="https://github.com/IPOR-Labs" target="_blank" class="hover:text-[#8429FF] transition-colors">GitHub</a></li>
+            <li><span class="opacity-50">Python SDK</span></li>
+          </ul>
+        </div>
+        <!-- Community -->
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider mb-4">Community</h4>
+          <ul class="space-y-2 text-sm text-[#70747A] dark:text-[#9BA3AF]">
+            <li><a href="https://x.com/ipor_io" target="_blank" class="hover:text-[#8429FF] transition-colors">X / Twitter</a></li>
+            <li><a href="https://discord.com/invite/bSKzq6UMJ3" target="_blank" class="hover:text-[#8429FF] transition-colors">Discord</a></li>
+            <li><a href="https://www.linkedin.com/company/73049136/" target="_blank" class="hover:text-[#8429FF] transition-colors">LinkedIn</a></li>
+            <li><a href="https://blog.ipor.io/" target="_blank" class="hover:text-[#8429FF] transition-colors">Medium Blog</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-[#E5E5E5] dark:border-[#2E3137] pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#70747A] dark:text-[#9BA3AF]">
+        <span>&copy; 2026 IPOR Labs AG. All rights reserved.</span>
+        <div class="flex items-center gap-6">
+          <a href="privacy-policy.html" class="hover:text-[#8429FF] transition-colors">Privacy Policy</a>
+          <a href="cookie-policy.html" class="hover:text-[#8429FF] transition-colors">Cookie Policy</a>
+          <a href="terms-of-use.html" class="hover:text-[#8429FF] transition-colors">Terms of Use</a>
+          <a href="https://drive.google.com/drive/folders/1RNoJP4LpfhV3G8p9Eq9xFoorq4RyW29_" target="_blank" class="hover:text-[#8429FF] transition-colors">Brand Assets</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- COOKIE BANNER -->
+  <div id="cookie-banner" class="fixed bottom-6 right-6 z-50 w-80 bg-white dark:bg-[#161A20] border border-[#E5E5E5] dark:border-[#2E3137] rounded-2xl p-6 shadow-xl">
+    <h4 class="font-semibold text-sm mb-2">Cookie Preferences</h4>
+    <p class="text-xs text-[#70747A] dark:text-[#9BA3AF] mb-4">We use cookies to improve your experience and analyze site traffic. By accepting, you consent to our use of cookies.</p>
+    <div class="flex gap-3">
+      <button id="cookie-accept" class="btn-primary text-xs px-4 py-2 flex-1">Accept</button>
+      <button id="cookie-decline" class="text-xs px-4 py-2 flex-1 rounded-full border border-[#E5E5E5] dark:border-[#2E3137] hover:bg-black/5 dark:hover:bg-white/5 transition-colors">Decline</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

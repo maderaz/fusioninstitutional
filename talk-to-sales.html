@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talk to Sales | Fusion by IPOR</title>
+  <meta name="description" content="Get in touch with the Fusion team. Whether you're building vaults or deploying institutional capital, we'd love to hear from you.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{poppins:['Poppins','sans-serif'],source:['"Source Sans 3"','sans-serif']}}}}</script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-white text-black font-poppins">
+
+  <!-- NAV -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 nav-glass border-b border-[#E5E5E5]">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="index.html" class="flex items-center gap-2 text-sm font-medium text-[#70747A] hover:text-black transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back
+      </a>
+      <a href="index.html">
+        <img src="images/fusion-logo-dark.png" alt="Fusion by IPOR" class="h-5">
+      </a>
+      <div class="w-16"></div>
+    </div>
+  </header>
+
+  <main class="pt-28 pb-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+        <!-- Left: Copy -->
+        <div class="lg:pt-8">
+          <span class="text-xs font-semibold uppercase tracking-widest text-[#8429FF] mb-4 block">Get in Touch</span>
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-6">
+            Let's explore how Fusion fits your strategy.
+          </h1>
+          <p class="text-base text-[#70747A] mb-8 leading-relaxed">
+            Whether you're an institution looking to deploy capital through professionally managed onchain vaults, or a builder seeking modular infrastructure for your next yield product — our team is ready to help you get started.
+          </p>
+
+          <div class="space-y-6 mb-10">
+            <div class="flex gap-4">
+              <div class="w-10 h-10 rounded-xl bg-[#8429FF]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-sm mb-1">For Institutions &amp; Allocators</h3>
+                <p class="text-sm text-[#70747A]">Explore sovereign vault deployment, white-label solutions, and institutional-grade risk frameworks tailored to your compliance requirements.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-10 h-10 rounded-xl bg-[#8429FF]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-sm mb-1">For Builders &amp; Protocols</h3>
+                <p class="text-sm text-[#70747A]">Integrate Fusion's composable vault infrastructure into your protocol, wallet, or distribution platform. Ship yield products without writing Solidity.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-10 h-10 rounded-xl bg-[#8429FF]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-sm mb-1">For Partners &amp; Distributors</h3>
+                <p class="text-sm text-[#70747A]">White-label Fusion vaults for your users. Embed institutional yield infrastructure into any interface — from wallets to exchanges.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-6 text-xs text-[#70747A]">
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 rounded-full bg-green-500"></div>
+              Typically responds within 24 hours
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="bg-[#F5F5FA] rounded-2xl border border-[#E5E5E5] p-8 md:p-10">
+          <h2 class="text-xl font-semibold mb-6">Contact the Fusion team</h2>
+          <form id="contact-form" class="space-y-5" onsubmit="return handleSubmit(event)">
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-medium mb-1.5" for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-3 rounded-xl border border-[#E5E5E5] bg-white text-sm focus:outline-none focus:border-[#8429FF] transition-colors" placeholder="John">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1.5" for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-3 rounded-xl border border-[#E5E5E5] bg-white text-sm focus:outline-none focus:border-[#8429FF] transition-colors" placeholder="Doe">
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1.5" for="email">Work Email *</label>
+              <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-[#E5E5E5] bg-white text-sm focus:outline-none focus:border-[#8429FF] transition-colors" placeholder="john@company.com">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1.5" for="company">Company / Organization *</label>
+              <input type="text" id="company" name="company" required class="w-full px-4 py-3 rounded-xl border border-[#E5E5E5] bg-white text-sm focus:outline-none focus:border-[#8429FF] transition-colors" placeholder="Acme Capital">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1.5" for="role">Your Role</label>
+              <select id="role" name="role" class="w-full px-4 py-3 rounded-xl border border-[#E5E5E5] bg-white text-sm focus:outline-none focus:border-[#8429FF] transition-colors text-[#70747A]">
+                <option value="">Select your role</option>
+                <option>Portfolio Manager / CIO</option>
+                <option>Head of DeFi / Digital Assets</option>
+                <option>Protocol Founder / CTO</option>
+                <option>Business Development</option>
+                <option>Engineering / Developer</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1.5" for="interest">I'm interested in</label>
+              <select id="interest" name="interest" class="w-full px-4 py-3 rounded-xl border border-[#E5E5E5] bg-white text-sm focus:outline-none focus:border-[#8429FF] transition-colors text-[#70747A]">
+                <option value="">Select an option</option>
+                <option>Deploying a vault for my fund / organization</option>
+                <option>Building on Fusion infrastructure</option>
+                <option>White-labeling vaults for my platform</option>
+                <option>Depositing into existing vaults</option>
+                <option>Partnership / integration</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1.5" for="message">Tell us more</label>
+              <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-xl border border-[#E5E5E5] bg-white text-sm focus:outline-none focus:border-[#8429FF] transition-colors resize-none" placeholder="Describe your use case, goals, or any questions you have..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary w-full text-sm py-3.5">Submit Inquiry</button>
+            <p class="text-xs text-[#70747A] text-center">By submitting this form, you agree to our <a href="privacy-policy.html" class="text-[#8429FF] hover:underline">Privacy Policy</a>.</p>
+          </form>
+          <div id="form-success" class="hidden text-center py-12">
+            <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Thank you for reaching out.</h3>
+            <p class="text-sm text-[#70747A]">Our team will be in touch within one business day.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Simple footer -->
+  <footer class="border-t border-[#E5E5E5] py-8 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#70747A]">
+      <span>&copy; 2026 IPOR Labs AG. All rights reserved.</span>
+      <div class="flex items-center gap-6">
+        <a href="privacy-policy.html" class="hover:text-[#8429FF]">Privacy Policy</a>
+        <a href="terms-of-use.html" class="hover:text-[#8429FF]">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('contact-form').classList.add('hidden');
+    document.getElementById('form-success').classList.remove('hidden');
+    return false;
+  }
+  </script>
+</body>
+</html>
