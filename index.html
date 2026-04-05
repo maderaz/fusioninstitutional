@@ -77,44 +77,47 @@
 
   <!-- HERO -->
   <section class="pt-28 pb-16 md:pt-36 md:pb-24 px-6">
-    <div class="max-w-7xl mx-auto text-center">
-      <h1 class="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6 reveal">
-        Vault infrastructure for<br><span class="gradient-text">institutional-grade</span> yield.
-      </h1>
-      <p class="text-base md:text-lg text-[#70747A] dark:text-[#9BA3AF] max-w-2xl mx-auto mb-10 reveal reveal-delay-1">
-        Deploy and manage onchain vault strategies or earn through professionally curated vaults. Modular infrastructure across Aave, Morpho, SparkLend, Euler, and more.
-      </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 reveal reveal-delay-2">
-        <a href="https://app.ipor.io/fusion" target="_blank" rel="noopener" class="btn-primary text-base px-8 py-3">Launch App</a>
-        <a href="https://docs.ipor.io/build-on-fusion/developer-guide/quick-start-guide" target="_blank" rel="noopener" class="btn-outline text-base px-8 py-3">Start Building</a>
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Left: Text -->
+        <div>
+          <h1 class="text-3xl md:text-5xl lg:text-[56px] font-semibold leading-[1.1] mb-6 reveal">
+            Vault infrastructure for <span class="gradient-text">institutional-grade</span> yield.
+          </h1>
+          <p class="text-base md:text-lg text-[#70747A] dark:text-[#9BA3AF] max-w-lg mb-8 reveal reveal-delay-1">
+            Deploy and manage onchain vault strategies or earn through professionally curated vaults. Modular infrastructure across Aave, Morpho, SparkLend, Euler, and more.
+          </p>
+          <div class="flex flex-col sm:flex-row items-start gap-4 mb-10 reveal reveal-delay-2">
+            <a href="https://app.ipor.io/fusion" target="_blank" rel="noopener" class="btn-primary text-sm px-7 py-3">Launch App</a>
+            <a href="https://docs.ipor.io/build-on-fusion/developer-guide/quick-start-guide" target="_blank" rel="noopener" class="btn-outline text-sm px-7 py-3">Start Building</a>
+          </div>
+          <!-- Stats -->
+          <div class="flex items-center gap-8 reveal reveal-delay-3">
+            <div>
+              <div class="text-2xl md:text-3xl font-bold font-source">$250M</div>
+              <div class="text-xs text-[#70747A] dark:text-[#9BA3AF] mt-1">TVM</div>
+            </div>
+            <div class="w-px h-10 bg-[#E5E5E5] dark:bg-[#2E3137]"></div>
+            <div>
+              <div class="text-2xl md:text-3xl font-bold font-source">$2.6B</div>
+              <div class="text-xs text-[#70747A] dark:text-[#9BA3AF] mt-1">Vol. LTD</div>
+            </div>
+            <div class="w-px h-10 bg-[#E5E5E5] dark:bg-[#2E3137]"></div>
+            <div>
+              <div class="text-2xl md:text-3xl font-bold font-source">103</div>
+              <div class="text-xs text-[#70747A] dark:text-[#9BA3AF] mt-1">Vaults</div>
+            </div>
+          </div>
+        </div>
+        <!-- Right: App Mock -->
+        <div class="reveal reveal-delay-2">
+          <img src="images/app-mock.png" alt="Fusion App Dashboard" class="w-full rounded-2xl shadow-2xl" loading="lazy">
+        </div>
       </div>
 
-      <!-- Stats -->
-      <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 mb-16 reveal reveal-delay-3">
-        <div class="text-center">
-          <div class="text-2xl md:text-3xl font-bold font-source">$250M</div>
-          <div class="text-xs text-[#70747A] dark:text-[#9BA3AF] mt-1">TVM</div>
-        </div>
-        <div class="w-px h-10 bg-[#E5E5E5] dark:bg-[#2E3137]"></div>
-        <div class="text-center">
-          <div class="text-2xl md:text-3xl font-bold font-source">103</div>
-          <div class="text-xs text-[#70747A] dark:text-[#9BA3AF] mt-1">Vaults</div>
-        </div>
-        <div class="w-px h-10 bg-[#E5E5E5] dark:bg-[#2E3137]"></div>
-        <div class="text-center">
-          <div class="text-2xl md:text-3xl font-bold font-source">$10B+</div>
-          <div class="text-xs text-[#70747A] dark:text-[#9BA3AF] mt-1">Volume processed</div>
-        </div>
-      </div>
-
-      <!-- App Mock -->
-      <div class="max-w-4xl mx-auto reveal reveal-delay-4">
-        <img src="images/app-mock.png" alt="Fusion App Dashboard" class="w-full rounded-2xl shadow-2xl" loading="lazy">
-      </div>
-
-      <!-- Trusted By logos marquee -->
-      <div class="mt-16 reveal">
-        <p class="text-xs text-[#70747A] dark:text-[#9BA3AF] uppercase tracking-widest mb-6">Trusted by</p>
+      <!-- Trusted By logos -->
+      <div class="mt-20 reveal">
+        <p class="text-xs text-[#70747A] dark:text-[#9BA3AF] uppercase tracking-widest mb-6 text-center">Trusted by</p>
         <div class="overflow-hidden">
           <div class="flex items-center gap-12 animate-marquee whitespace-nowrap">
             <img src="images/logo-tesseract.png" alt="Tesseract" class="h-6 opacity-60 hover:opacity-100 transition-opacity">
@@ -124,7 +127,6 @@
             <img src="images/logo-k3capital.png" alt="K3 Capital" class="h-6 opacity-60 hover:opacity-100 transition-opacity">
             <img src="images/logo-navigator.png" alt="Navigator" class="h-6 opacity-60 hover:opacity-100 transition-opacity">
             <img src="images/logo-llamarisk.png" alt="Llama Risk" class="h-6 opacity-60 hover:opacity-100 transition-opacity">
-            <!-- duplicate for seamless loop -->
             <img src="images/logo-tesseract.png" alt="Tesseract" class="h-6 opacity-60">
             <img src="images/logo-first.png" alt="First" class="h-6 opacity-60">
             <img src="images/logo-third.png" alt="Reservoir" class="h-6 opacity-60">
@@ -137,20 +139,18 @@
       </div>
     </div>
   </section>
-
   <!-- TRANSPARENCY -->
   <section id="transparency" class="py-16 md:py-24 px-6">
     <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-12 reveal">
-        <span class="text-xs font-semibold uppercase tracking-widest text-[#8429FF] mb-4 block">Full Transparency</span>
-        <h2 class="text-2xl md:text-4xl font-semibold mb-4">See everything. <span class="gradient-text">Trust nothing blindly.</span></h2>
-        <p class="text-[#70747A] dark:text-[#9BA3AF] max-w-2xl mx-auto">Every vault in Fusion exposes its full mechanics: allocations, performance, costs, and onchain activity. You always know exactly what's happening with your capital.</p>
-      </div>
-      <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] overflow-hidden reveal">
           <img src="images/app-mock.png" alt="Fusion Dashboard showing vault transparency" class="w-full" loading="lazy">
         </div>
-        <div class="space-y-4 reveal reveal-delay-1">
+        <div class="reveal reveal-delay-1">
+          <span class="text-xs font-semibold uppercase tracking-widest text-[#8429FF] mb-4 block">Full Transparency</span>
+          <h2 class="text-2xl md:text-4xl font-semibold mb-4">See everything. <span class="gradient-text">Trust nothing blindly.</span></h2>
+          <p class="text-[#70747A] dark:text-[#9BA3AF] mb-8">Every vault in Fusion exposes its full mechanics: allocations, performance, costs, and onchain activity. You always know exactly what's happening with your capital.</p>
+          <div class="space-y-3">
           <div class="flex items-center gap-3 p-4 rounded-xl bg-white dark:bg-[#161A20] border border-[#E5E5E5] dark:border-[#2E3137]">
             <svg class="w-5 h-5 text-[#8429FF] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
             <span class="text-sm font-medium">Real-Time Performance Reports</span>
@@ -175,6 +175,7 @@
             <svg class="w-5 h-5 text-[#8429FF] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
             <span class="text-sm font-medium">Cost &amp; Slippage Transparency</span>
           </div>
+          </div>
         </div>
       </div>
       <p class="text-xs text-[#70747A] dark:text-[#9BA3AF] text-center mt-8 italic">*Product interface shown for illustrative purposes only. Displayed values are simulated and do not represent actual portfolio performance, balances, or guaranteed returns.</p>
@@ -184,10 +185,10 @@
   <!-- TESTIMONIALS -->
   <section class="py-16 md:py-24 px-6 bg-white dark:bg-[#0D1117]">
     <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-12 reveal">
-        <span class="text-xs font-semibold uppercase tracking-widest text-[#8429FF] mb-4 block">Testimonials</span>
-        <h2 class="text-2xl md:text-4xl font-semibold mb-4">Trusted by the teams <span class="gradient-text">building</span> the future of onchain capital.</h2>
-        <p class="text-[#70747A] dark:text-[#9BA3AF] max-w-2xl mx-auto">Leading curators, asset managers and projects rely on Fusion to power their onchain strategies.</p>
+      <div class="mb-12 reveal">
+        <span class="text-xs font-semibold uppercase tracking-widest text-[#8429FF] mb-4 block text-center">Testimonials</span>
+        <h2 class="text-2xl md:text-4xl font-semibold mb-4 text-center">Trusted by the teams building<br>the <span class="gradient-text">future</span> of onchain capital.</h2>
+        <p class="text-[#70747A] dark:text-[#9BA3AF] max-w-2xl mx-auto text-center">Leading curators, asset managers and projects rely on Fusion to power their onchain strategies.</p>
       </div>
 
       <!-- Featured testimonial -->
@@ -240,12 +241,12 @@
   <!-- BENEFITS -->
   <section class="py-16 md:py-24 px-6">
     <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-12 reveal">
+      <div class="mb-12 reveal">
         <span class="text-xs font-semibold uppercase tracking-widest text-[#8429FF] mb-4 block">Why Fusion</span>
         <h2 class="text-2xl md:text-4xl font-semibold mb-4">Infrastructure that enforces your <span class="gradient-text">edge</span>.</h2>
-        <p class="text-[#70747A] dark:text-[#9BA3AF] max-w-2xl mx-auto">Every component of Fusion is designed for asset managers who need performance, transparency, and composability at institutional scale.</p>
+        <p class="text-[#70747A] dark:text-[#9BA3AF] max-w-xl">Every component of Fusion is designed for asset managers who need performance, transparency, and composability at institutional scale.</p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid sm:grid-cols-2 gap-6">
         <div class="rounded-2xl border border-[#E5E5E5] dark:border-[#2E3137] bg-white dark:bg-[#161A20] p-8 reveal">
           <div class="w-10 h-10 rounded-xl bg-[#8429FF]/10 flex items-center justify-center mb-4">
             <svg class="w-5 h-5 text-[#8429FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -290,7 +291,7 @@
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16 reveal">
         <span class="text-xs font-semibold uppercase tracking-widest text-[#8429FF] mb-4 block">Architecture</span>
-        <h2 class="text-2xl md:text-4xl font-semibold mb-4">One vault. Every strategy.<br>Full control.</h2>
+        <h2 class="text-2xl md:text-4xl font-semibold mb-4">One vault. Every strategy.<br><span class="gradient-text italic">Full</span> control.</h2>
         <p class="text-[#70747A] dark:text-[#9BA3AF] max-w-3xl mx-auto">Fusion's modular architecture separates execution from custody. Deploy capital into Fusion Plasma Vaults, connect strategy logic through composable fuses, and let Alpha engines optimize across them, all in a plug &amp; play fashion, fully customizable per strategy needs.</p>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
@@ -322,10 +323,10 @@
   <!-- SOLUTIONS -->
   <section id="solutions" class="py-16 md:py-24 px-6">
     <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-12 reveal">
+      <div class="mb-12 reveal">
         <span class="text-xs font-semibold uppercase tracking-widest text-[#8429FF] mb-4 block">Solutions</span>
         <h2 class="text-2xl md:text-4xl font-semibold mb-4">Built for every participant in the <span class="gradient-text">vault</span> stack.</h2>
-        <p class="text-[#70747A] dark:text-[#9BA3AF] max-w-2xl mx-auto">Whether you're allocating treasury capital or building the next yield product, Fusion is the infrastructure layer underneath.</p>
+        <p class="text-[#70747A] dark:text-[#9BA3AF] max-w-xl">Whether you're allocating treasury capital or building the next yield product, Fusion is the infrastructure layer underneath.</p>
       </div>
       <div class="grid sm:grid-cols-2 gap-6">
         <!-- Card 1 -->
@@ -415,7 +416,7 @@
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-12 reveal">
         <span class="text-xs font-semibold uppercase tracking-widest text-[#8429FF] mb-4 block">Better by Design</span>
-        <h2 class="text-2xl md:text-4xl font-semibold mb-4">How Fusion Vaults <span class="gradient-text">outperform</span> the alternative.</h2>
+        <h2 class="text-2xl md:text-4xl font-semibold mb-4">How Fusion Vaults <span class="gradient-text italic">outperform</span> the alternative.</h2>
         <p class="text-[#70747A] dark:text-[#9BA3AF] max-w-2xl mx-auto">Merkle proof vaults were a first step. Fusion is the leap forward: transparent, composable, and built for speed.</p>
       </div>
       <div class="overflow-x-auto reveal">
@@ -423,7 +424,7 @@
           <thead>
             <tr class="border-b border-[#E5E5E5] dark:border-[#2E3137]">
               <th class="text-left py-4 px-4 font-semibold w-1/4">Feature</th>
-              <th class="text-left py-4 px-4 font-semibold text-[#8429FF]">Fusion</th>
+              <th class="text-left py-4 px-4 font-semibold text-[#8429FF]"><img src="images/fusion-logo-dark.png" alt="Fusion" class="h-5 inline dark:hidden"><img src="images/fusion-logo-light.png" alt="Fusion" class="h-5 hidden dark:inline"> Fusion</th>
               <th class="text-left py-4 px-4 font-semibold text-[#70747A] dark:text-[#9BA3AF]">Merkle Proof Vaults</th>
             </tr>
           </thead>
@@ -487,10 +488,10 @@
   <!-- SECURITY -->
   <section id="security" class="py-16 md:py-24 px-6 bg-white dark:bg-[#0D1117]">
     <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-12 reveal">
+      <div class="mb-12 reveal">
         <span class="text-xs font-semibold uppercase tracking-widest text-[#8429FF] mb-4 block">Security</span>
-        <h2 class="text-2xl md:text-4xl font-semibold mb-4">Transparent &amp; battle-tested <span class="gradient-text">vault</span> infrastructure.</h2>
-        <p class="text-[#70747A] dark:text-[#9BA3AF] max-w-3xl mx-auto">Immutable vault logic. Non-upgradable fuses. Role-based access control. Fusion is built by engineers from banking, payments, and insurance, and audited by the best in Web3.</p>
+        <h2 class="text-2xl md:text-4xl font-semibold mb-4">Transparent &amp;<br>battle-tested<br><span class="gradient-text italic">vault</span> infrastructure.</h2>
+        <p class="text-[#70747A] dark:text-[#9BA3AF] max-w-xl">Immutable vault logic. Non-upgradable fuses. Role-based access control. Fusion is built by engineers from banking, payments, and insurance, and audited by the best in Web3.</p>
       </div>
 
       <!-- Stats -->
@@ -556,7 +557,7 @@
   <!-- FINAL CTA -->
   <section class="py-16 md:py-24 px-6">
     <div class="max-w-3xl mx-auto text-center reveal">
-      <h2 class="text-2xl md:text-4xl font-semibold mb-4">The <span class="gradient-text">Vault</span> layer is ready.</h2>
+      <h2 class="text-2xl md:text-4xl font-semibold mb-4">The <span class="gradient-text italic">Vault</span> layer is ready.</h2>
       <p class="text-[#70747A] dark:text-[#9BA3AF] mb-10">Deploy your first vault, deposit into a curated strategy, or embed Fusion into your product.</p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a href="https://app.ipor.io/fusion" target="_blank" rel="noopener" class="btn-primary text-base px-8 py-3">Launch App</a>
